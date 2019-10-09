@@ -1,5 +1,5 @@
 # TP_PDS_II
-Truco desenvolvido em c++ para o trabalho final de Programação e Desenvolvimento de Software II por alunos do curso de Engenharia de Sistemas da UFMG. 
+Truco desenvolvido em C++ para o trabalho final de Programação e Desenvolvimento de Software II por alunos do curso de Engenharia de Sistemas da UFMG. 
 
 
 # User Stories:
