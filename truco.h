@@ -24,14 +24,13 @@ class round{
     static int wincount_human;
     static int wincount_bot;
     vector<card, 40> deck;
-    vector <card, 40> played;
+    vector <card, 4> played;
     public:
     void get_card();
     void remove_card();
     void cut(vector<card>);
     void rand_deck(vector<card>);
     void get_played();
-    void get_top_deck();
     round();
     ~round();  
 };
