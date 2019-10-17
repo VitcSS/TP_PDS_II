@@ -45,8 +45,7 @@ class player{
     public:
     void play_card(round);
     void ask_truco(player);
-    void acept_truco(player);
-    void refuse_truco(player);
+    void acept_refuse_truco(player);
     void give_up(round);
     
 };
