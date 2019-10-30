@@ -44,7 +44,6 @@ class game : public round{
 class player{
     private:
     std::list<card> hand;
-    std::string name;
     public:
     void play_card(round);
     void ask_truco(player);
@@ -55,16 +54,19 @@ class player{
 };
 class human : public player{
     public:
-        human(std::string name);
+        human(std::string name, std::list<card> hand);
     
     private: 
         std::string name; 
+        std::list<card> hand;
 };
 class bot : public player {
     public:
         bot();
+        void set_id();
     
     private:
         int id;
+        static int robot_numbers;
 };
 
