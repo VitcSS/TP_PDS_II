@@ -36,27 +36,35 @@ class round{
 };
 class game : public round{
     public:
+        game();
+        ~game();
     
     private:
 }:
 class player{
     private:
     std::list<card> hand;
+    std::string name;
     public:
     void play_card(round);
     void ask_truco(player);
     void acept_refuse_truco(player);
     void give_up(round);
+    player();
     
 };
 class human : public player{
     public:
+        human(std::string name);
     
-    private:    
+    private: 
+        std::string name; 
 };
 class bot : public player {
     public:
+        bot();
     
     private:
+        int id;
 };
 
