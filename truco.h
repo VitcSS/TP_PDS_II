@@ -82,13 +82,6 @@ class bot : public player {
         static int robot_numbers;
 };
 
-class menu{
-    public:
-
-    private:
-};
-
-
 
 
 
