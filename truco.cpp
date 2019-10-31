@@ -58,7 +58,7 @@ vector<int>cn(4);
 		deck.insert((deck.begin()+(i+i)),(num));
 			
 	}
-	for (i = 0; i < (deck.size()); ++i){
+	for (i = 0; i < (deck.size()); ++i){ //esses for com cout<< só servem pra caso vocês queiram sair checando como está sendo a criação do deck
 		cout<< deck[i] <<" ";
 	}
 
