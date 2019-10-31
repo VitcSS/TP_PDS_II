@@ -1,4 +1,10 @@
-include "truco.h"
+#include "truco.h"
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include <list>
+#include <vector>
+
 std::string card::get_suit(){
     return suit;
 };
