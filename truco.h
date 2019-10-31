@@ -35,6 +35,8 @@ class round{
 };
 class game : public round{
     public:
+        game();
+        ~game();
     
     private:
 }:
@@ -46,16 +48,24 @@ class player{
     void ask_truco(player);
     void acept_refuse_truco(player);
     void give_up(round);
+    player();
     
 };
 class human : public player{
     public:
+        human(std::string name, std::list<card> hand);
     
-    private:    
+    private: 
+        std::string name; 
+        std::list<card> hand;
 };
 class bot : public player {
     public:
+        bot();
+        void set_id();
     
     private:
+        int id;
+        static int robot_numbers;
 };
 

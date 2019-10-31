@@ -18,6 +18,7 @@ bool card::compare_valor(card c){
     return false;
 }
 
+
 round::round(){
 
 srand(time(NULL));
@@ -86,4 +87,16 @@ card::card (int v, int s){
 	if (s=3)
 		suit = "Copas";
 	valor = v;
+}
+"Construtor de um humano: recebe name como o nome que ele define e hand como as cartas que possui"
+human::human(std::string name, std::list<card> hand){
+	this->name = name;
+	this->hand = hand;
+}
+"Atributo static que armazena o numero de bots no jogo"
+int bot::robot_numers = 0;
+"construtor de bots: id é a referencia para como identificar o bot e aumenta o numero de robos"
+void bot::set_id(){
+	this->id = this->robot_numers++;
+	this->robot_numers++;
 }
