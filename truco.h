@@ -17,7 +17,20 @@ class card{
     bool compare_valor(card );
 
 };
-class round{
+class deck{
+    private:
+
+    public:
+}
+class menu{
+    private:
+
+    public:
+    menu();
+    ~menu();
+
+}
+class round : public deck{
     private:
     bool winner;//Define se foi vitória do jogador ou do bot
     static int wincount_human;
@@ -68,4 +81,17 @@ class bot : public player {
         int id;
         static int robot_numbers;
 };
+
+class menu{
+    public:
+
+    private:
+};
+
+
+
+
+
+
+
 
