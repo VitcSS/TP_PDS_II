@@ -10,8 +10,7 @@ class card{
     std::string suit;
     int valor;
     public:
-    card();
-    card(int, std::string);
+    card(int v, int n);
     ~card();
     std::string get_suit(); 
     int get_valor();
@@ -23,8 +22,8 @@ class round{
     bool winner;//Define se foi vitória do jogador ou do bot
     static int wincount_human;
     static int wincount_bot;
-    vector<card, 40> deck;
-    vector <card, 4> played;
+    vector<int> deck; // mudei pra int pra funncionar com o cpp que eu fiz
+    vector <card> played;
     public:
     void get_card();
     void remove_card();
