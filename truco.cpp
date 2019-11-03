@@ -19,75 +19,81 @@ bool card::compare_valor(card c){
 }
 
 
-round::round(){
+card::card (int v, int s){ 
+	switch (s) {
+		case 0:
+			suit = "Paus";
+			break;
+		case 1:
+			suit = "Espadas";
+			break;
+		case 2:
+			suit = "Ouros";
+			break;
+		case 3:
+			suit = "Copas";
+			break;
+	}
+	valor = v;
+	switch (valor) {
+		case 0:
+			nome = "As";
+			break;
+		case 1:
+			nome = "Dois";
+			break;
+		case 2:
+			nome = "Tres";
+			break;
+		case 3:
+			nome = "Quatro";
+			break;
+		case 4:
+			nome = "Cinco";
+			break;
+		case 5:
+			nome = "Seis";
+			break;
+		case 6:
+			nome = "Sete";
+			break;
+		case 7:
+			nome = "Dama";
+			break;
+		case 8:
+			nome = "Valete";
+			break;
+		case 9:
+			nome = "Rei";
+			break;
+	}
+}
+
+//excluir depois
+void card::imprimir() {
+	cout << nome << " de " << suit;
+}
+
+int main(){
 
 srand(time(NULL));
-vector<int>cc(40);
-vector<int>cn(4);
- 
-	int i,j,num;
-	for ( i = 0; i < 10; i++){
-		cc[i] = 0;
+vector<card> deck;
+int i = 0;
+while (i < 10) {
+	int j = 0;
+	while (j < 4) {
+		deck.push_back(card(i, j));
+		j++;
 	}
-
-	for (j=0; j<4; j++){ 
-		for(i=0; i<10; i++){
-			num = rand()%10;
-			while(cc[num] >= 4 ){
-				num = rand()%10;
-			}
-			cc[num]++;
-			deck.push_back(num);
-		}
-	}
-
-	for (i = 0; i < (deck.size()); ++i){
-		cout<< deck[i] <<" ";
-	}
-
-	cout<<endl;
-
-	for ( i = 0; i < 4; i++){
-		cn[i] = 0;
-	}
-	for(i=0; i<40; i++){
-		num = rand()%4;
-		while(cn[num] >= 10 ){
-			num = rand()%4;	
-		}
-		cn[num]++;
-		deck.insert((deck.begin()+(i+i)),(num));
-			
-	}
-	for (i = 0; i < (deck.size()); ++i){ //esses for com cout<< só servem pra caso vocês queiram sair checando como está sendo a criação do deck
-		cout<< deck[i] <<" ";
-	}
-
-	for(i=0; i<56; i++){
-		deck.erase(deck.begin());	
-	}
-
-	cout<<endl;
-
-	for (i = 0; i < (deck.size()); ++i){
-		cout<< deck[i] <<" ";
-	}
-
-}	
-
-
-card::card (int v, int s){ 
-
-	if (s=0)
-			suit = "Paus";
-	if (s=1)
-		suit = "Espadas";
-	if (s=2)
-		suit = "Ouros";
-	if (s=3)
-		suit = "Copas";
-	valor = v;
+	i++;
 }
+
+vector<card>::iterator iter = deck.begin();
+for (; iter != deck.end(); iter++) {
+	iter->imprimir();
+	cout << endl;
+}
+	
 "Construtor de um humano: recebe name como o nome que ele define e hand como as cartas que possui"
 human::human(std::string name, std::list<card> hand){
 	this->name = name;
