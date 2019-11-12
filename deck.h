@@ -16,3 +16,14 @@
 #include"game.h"
 
 using namespace std;
+
+class deck{
+private:
+  list<card> cards;
+public:
+  deck();
+  ~deck();
+  void embaralhar();
+  void remove_card(deck *h);
+  void add_card(deck *h);
+}
