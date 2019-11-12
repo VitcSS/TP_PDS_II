@@ -16,3 +16,19 @@
 
 using namespace std;
 
+class round{
+    private:
+    bool winner;//Define se foi vitória do jogador ou do bot
+    static int wincount_human;
+    static int wincount_bot;
+    vector<int> deck; // mudei pra int pra funncionar com o cpp que eu fiz
+    vector <card> played;
+    public:
+    void get_card();
+    void remove_card();
+    void cut(vector<card>);
+    void rand_deck(vector<card>);
+    void get_played();
+    round();
+    ~round();  
+};
