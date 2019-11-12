@@ -18,9 +18,12 @@
 using namespace std;
 
 class game : public round{
+    friend class menu;
     public:
         game();
         ~game();
 
     private:
+        int num_jogadores;
+        list<int> jogadores;
 };
