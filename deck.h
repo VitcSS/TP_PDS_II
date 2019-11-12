@@ -27,4 +27,5 @@ public:
   void cut();
   void remove_card(deck *h);
   void add_card(deck *h);
+  friend class round;
 }
