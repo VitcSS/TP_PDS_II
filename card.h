@@ -87,6 +87,7 @@ card::card (int v, int s){
 void card::imprimir() {
 	cout << nome << " de " << suit;
 }
+/* Implementação do gerador do deck, mover depois
 
 int main(){
 
@@ -107,3 +108,5 @@ for (; iter != deck.end(); iter++) {
 	iter->imprimir();
 	cout << endl;
 }
+*/
+#endif
