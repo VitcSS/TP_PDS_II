@@ -16,18 +16,17 @@
 #include"game.h"
 class menu{
     private:
-        int num_players;
-        std::list<char> players;
+        game jogo;
     public:
         menu(int num_players){
-            this->num_players = num_players;
+            this->jogo.num_players = num_players;
         };
         void add_players(){
             for(int i =0; i<this->num_players; i++){
                 std::cout<<"Entre com o nickname"<<std::endl;
-                char nick;
+                int nick;
                 std::cin>>nick;
-                this->players.push_back(nick);
+                this->jogo.players.push_back(nick);
             };
         };
     
