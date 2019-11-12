@@ -21,7 +21,7 @@ class round{
     bool winner;//Define se foi vitória do jogador ou do bot
     static int wincount_human;
     static int wincount_bot;
-    vector<int> deck; // mudei pra int pra funncionar com o cpp que eu fiz
+    //INSERIR CLASSE DECK!!!
     vector <card> played;
     public:
     void get_card();
