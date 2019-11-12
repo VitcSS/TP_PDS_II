@@ -16,3 +16,10 @@
 #include"game.h"
 
 using namespace std;
+
+class hand: public deck(){
+  private:
+  
+  public:
+  play_card(round *r);
+}
