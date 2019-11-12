@@ -24,6 +24,7 @@ public:
   deck();
   ~deck();
   void embaralhar();
+  void cut();
   void remove_card(deck *h);
   void add_card(deck *h);
 }
