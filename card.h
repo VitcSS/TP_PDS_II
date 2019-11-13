@@ -28,8 +28,11 @@ class card{
 //        ~card(); dando erro, não implementado
         string get_suit();
         int get_valor();
-        void imprimir(); //excluir depois
-        bool compare_valor(card );
+        string get_nome();
+        void imprimir();
+        bool operator>(const card c) const;
+        bool operator==(const card c) const;
+        friend void menu::perguntar_jogadores();
 
 };
 
@@ -51,42 +54,78 @@ card::card (int v, int s){
 	valor = v;
 	switch (valor) {
 		case 0:
-			nome = "As";
-			break;
-		case 1:
-			nome = "Dois";
-			break;
-		case 2:
-			nome = "Tres";
-			break;
-		case 3:
 			nome = "Quatro";
 			break;
-		case 4:
+		case 1:
 			nome = "Cinco";
 			break;
-		case 5:
+		case 2:
 			nome = "Seis";
 			break;
-		case 6:
+		case 3:
 			nome = "Sete";
 			break;
-		case 7:
+		case 4:
 			nome = "Dama";
 			break;
-		case 8:
+		case 5:
 			nome = "Valete";
 			break;
-		case 9:
+		case 6:
 			nome = "Rei";
+			break;
+		case 7:
+			nome = "As";
+			break;
+		case 8:
+			nome = "Dois";
+			break;
+		case 9:
+			nome = "Tres";
 			break;
 	}
 }
 
-//excluir depois
 void card::imprimir() {
 	cout << nome << " de " << suit;
 }
+
+int card::get_valor() {
+	return valor;
+}
+
+string card::get_suit() {
+	return suit;
+}
+
+string card::get_nome() {
+	return nome;
+}
+
+bool card::operator>(const card& c) const {
+	if (valor == 0 && naipe == 0) {
+		return true;
+	} else if (valor == 3 && naipe == 3 && !(c.valor == 0 && c.naipe == 0)) {
+		return true;
+	} else if (valor == 7 && naipe == 1 && !((c.valor == 0 && c.naipe == 0) || (c.valor == 3 && c.naipe == 3))) {
+		return true;
+	} else if (valor == 3 && naipe == 2 && !((c.valor == 0 && c.naipe == 0) || (c.valor == 3 && c.naipe == 3) || (c.valor == 7 && c.naipe == 1))) {
+		return true;
+	} else if (!((c.valor == 0 && c.naipe == 0) || (c.valor == 3 && c.naipe == 3) || (c.valor == 7 && c.naipe == 1) || (c.valor == 3 && c.valor == 2))) {
+		return valor > c.valor;
+	} else {
+		return 0;
+	}
+}
+
+bool card::operator==(const card& c) const {
+	if (c > this || this > c) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 /* Implementação do gerador do deck, mover depois
 
 int main(){
@@ -109,4 +148,6 @@ for (; iter != deck.end(); iter++) {
 	cout << endl;
 }
 */
+
+
 #endif
