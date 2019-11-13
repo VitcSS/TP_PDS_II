@@ -26,8 +26,8 @@ class round{
     public:
     void get_card();
     void remove_card();
-    void cut(vector<card>);
-    void rand_deck(vector<card>);
+    void cut(); //Usa o deck 
+    void rand_deck(); //Usa o deck
     void get_played();
     round();
     ~round();  
