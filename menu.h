@@ -14,20 +14,13 @@
 #include"card.h"
 #include"deck.h"
 #include"game.h"
+
+using namespace std;
+
 class menu{
-    private:
-        game jogo;
     public:
-        menu(int num_players){
-            this->jogo.num_players = num_players;
-        };
-        void add_players(){
-            for(int i =0; i<this->num_players; i++){
-                std::cout<<"Entre com o nickname"<<std::endl;
-                int nick;
-                std::cin>>nick;
-                this->jogo.players.push_back(nick);
-            };
-        };
+        
     
 };
+
+#endif
