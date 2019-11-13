@@ -82,13 +82,11 @@ card::card (int v, int s){
 			break;
 	}
 }
-
-//excluir depois
 void card::imprimir() {
 	cout << nome << " de " << suit;
 }
 
-int main(){
+/*int main(){
 
 srand(time(NULL));
 vector<card> deck;
@@ -106,4 +104,5 @@ vector<card>::iterator iter = deck.begin();
 for (; iter != deck.end(); iter++) {
 	iter->imprimir();
 	cout << endl;
-}
+}*/
+
