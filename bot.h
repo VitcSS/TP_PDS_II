@@ -31,6 +31,7 @@ class bot : public player {
     	hand player_hand;
         int id;
         static int robot_numbers;
+        int jogos_ganhos;
 }
 
 int bot::robot_numbers = 0;
@@ -65,7 +66,7 @@ int acept_refuse_truco(player){
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
 	// Pode alterar a porcentagem posteriormente
-	if(aceitar_truco > 0.8){
+	if(aceitar_truco > 0.8œ){
 		return 1;
 	}
 	return 0;
