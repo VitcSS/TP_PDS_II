@@ -66,7 +66,7 @@ int acept_refuse_truco(player){
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
 	// Pode alterar a porcentagem posteriormente
-	if(aceitar_truco > 0.8œ){
+	if(aceitar_truco > 0.8){
 		return 1;
 	}
 	return 0;
