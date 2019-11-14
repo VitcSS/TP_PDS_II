@@ -19,7 +19,7 @@ using namespace std;
 
 class player{
     private:
-        std::list<card> hand;
+        hand hand;
     public:
         void play_card(round);
         void ask_truco(player);
