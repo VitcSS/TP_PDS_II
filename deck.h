@@ -7,6 +7,11 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
+#include <algorithm> 
+#include <ctime> 
+#include <cstdlib> 
+
+
 #include"bot.h"
 #include"player.h"
 #include"humano.h"
@@ -26,6 +31,7 @@ public:
   void cut();
   void shuffle();
   friend class round;
+  int myrandom();
 };
 
 deck::deck(){
@@ -41,12 +47,13 @@ while (i < 10) {
 	}
 	i++;
 }
+int deck::myrandom (int i) { return std::rand()%i;}
+
 vector<card>::iterator iter = Deck.begin();
 for (; iter != Deck.end(); iter++) {
 	iter->imprimir();
 	cout << endl;    
 
-shuffle(&Deck, 40);
 
 }
 
@@ -54,16 +61,11 @@ shuffle(&Deck, 40);
 
 }
 
-void shuffle(int *vet, int vetSize){ //mecher dps
-	for (int i = 0; i < vetSize; i++)
-	{
-		int r = rand() % vetSize;
-		card temp = vet[i];
-		vet[i] = vet[r];
-		vet[r] = temp;
-	}
-
-
+void deck::shuffle(){
+	std::srand ( unsigned ( std::time(NULL) ) );
+	std::random_shuffle(Deck.begin(), Deck.end());
+	std::random_shuffle ( Deck.begin(), Deck.end(), myrandom);
+	
 }
 
 #endif
