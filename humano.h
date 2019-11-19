@@ -18,7 +18,7 @@
 class human : public player{
     public:
         human(string name);
-        card play_card(round_atual, int card_played);
+        card play_card(round round_atual, int card_played);
         int ask_truco(player, bool pedir_truco);
         int acept_refuse_truco(player, bool aceitar_truco);
         void give_up(round_atual);
@@ -33,7 +33,7 @@ human::human(std::string name){
 	this->name = name;
 }
 
-card human::play_card(round_atual, int card_played){
+card human::play_card(round round_atual, int card_played){
 	return player_hand.play_card(round_atual, card_played);
 }
 
