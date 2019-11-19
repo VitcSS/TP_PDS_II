@@ -21,13 +21,15 @@ class round{
     bool winner;//Define se foi vitória do jogador ou do bot
     static int wincount_human;
     static int wincount_bot;
-    //INSERIR CLASSE DECK!!!
-    vector <card> played;
+    deck Deck;
+    deck played;
     public:
     void get_card();
-    void remove_card();
-    void cut(vector<card>);
-    void rand_deck(vector<card>);
+    void remove_card(player *p){
+        
+    }
+    void cut(); //Usa o deck 
+    void rand_deck(); //Usa o deck
     void get_played();
     round();
     ~round();  

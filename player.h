@@ -19,8 +19,10 @@ using namespace std;
 
 class player{
     private:
+
         hand player_hand;
         int jogos_ganhos;
+
     public:
         virtual card play_card(round) = 0;
         virtual int ask_truco(player) = 0;

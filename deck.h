@@ -19,13 +19,51 @@ using namespace std;
 
 class deck{
 private:
-  list<card> cards;
+  vector<card> Deck;
 public:
   deck();
-  ~deck();
-  void embaralhar();
+  // ~deck();
   void cut();
-  void remove_card(deck *h);
-  void add_card(deck *h);
+  void shuffle();
   friend class round;
+};
+
+deck::deck(){
+
+srand(time(NULL));
+vector<card> Deck;
+int i = 0;
+while (i < 10) {
+	int j = 0;
+	while (j < 4) {
+		Deck.push_back(card(i, j));
+		j++;
+	}
+	i++;
 }
+vector<card>::iterator iter = Deck.begin();
+for (; iter != Deck.end(); iter++) {
+	iter->imprimir();
+	cout << endl;    
+
+shuffle(&Deck, 40);
+
+}
+
+
+
+}
+
+void shuffle(int *vet, int vetSize){ //mecher dps
+	for (int i = 0; i < vetSize; i++)
+	{
+		int r = rand() % vetSize;
+		card temp = vet[i];
+		vet[i] = vet[r];
+		vet[r] = temp;
+	}
+
+
+}
+
+#endif

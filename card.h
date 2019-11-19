@@ -20,7 +20,7 @@ using namespace std;
 
 class card{
     private:
-        string suit; //naipe
+        string suit; //suit
         int valor;
         string nome;
     public:
@@ -28,8 +28,11 @@ class card{
 //        ~card(); dando erro, não implementado
         string get_suit();
         int get_valor();
-        void imprimir(); //excluir depois
-        bool compare_valor(card );
+        string get_nome();
+        void imprimir();
+        bool operator>(const card& c) const;
+        bool operator==(const card& c) const;
+       // friend void menu::perguntar_jogadores();
 
 };
 
@@ -51,58 +54,89 @@ card::card (int v, int s){
 	valor = v;
 	switch (valor) {
 		case 0:
-			nome = "As";
-			break;
-		case 1:
-			nome = "Dois";
-			break;
-		case 2:
-			nome = "Tres";
-			break;
-		case 3:
 			nome = "Quatro";
 			break;
-		case 4:
+		case 1:
 			nome = "Cinco";
 			break;
-		case 5:
+		case 2:
 			nome = "Seis";
 			break;
-		case 6:
+		case 3:
 			nome = "Sete";
 			break;
-		case 7:
+		case 4:
 			nome = "Dama";
 			break;
-		case 8:
+		case 5:
 			nome = "Valete";
 			break;
-		case 9:
+		case 6:
 			nome = "Rei";
+			break;
+		case 7:
+			nome = "As";
+			break;
+		case 8:
+			nome = "Dois";
+			break;
+		case 9:
+			nome = "Tres";
 			break;
 	}
 }
+
 void card::imprimir() {
 	cout << nome << " de " << suit;
 }
 
+
 /*int main(){
 
-srand(time(NULL));
-vector<card> deck;
-int i = 0;
-while (i < 10) {
-	int j = 0;
-	while (j < 4) {
-		deck.push_back(card(i, j));
-		j++;
-	}
-	i++;
+int card::get_valor() {
+	return valor;
 }
+
+
+string card::get_suit() {
+	return suit;
+}
+
+string card::get_nome() {
+	return nome;
+}
+
+bool card::operator>(const card& c) const {
+	if (valor == 0 && suit == "Paus") {
+		return true;
+	} else if (valor == 3 && suit == "Copas" && !(c.valor == 0 && c.suit == "Paus")) {
+		return true;
+	} else if (valor == 7 && suit == "Espadas" && !((c.valor == 0 && c.suit == "Paus") || (c.valor == 3 && c.suit == "Copas"))) {
+		return true;
+	} else if (valor == 3 && suit == "Ouros" && !((c.valor == 0 && c.suit == "Paus") || (c.valor == 3 && c.suit == "Copas") || (c.valor == 7 && c.suit == "Espadas"))) {
+		return true;
+	} else if (!((c.valor == 0 && c.suit == "Paus") || (c.valor == 3 && c.suit == "Copas") || (c.valor == 7 && c.suit == "Espadas") || (c.valor == 3 && c.suit == "Ouros"))) {
+		return valor > c.valor;
+	} else {
+		return 0;
+	}
+}
+
 
 vector<card>::iterator iter = deck.begin();
 for (; iter != deck.end(); iter++) {
 	iter->imprimir();
 	cout << endl;
 }*/
+
+
+bool card::operator==(const card& c) const {
+	if (c > *this || *this > c) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+#endif
 
