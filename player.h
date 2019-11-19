@@ -19,12 +19,15 @@ using namespace std;
 
 class player{
     private:
-        hand hand;
+
+        hand player_hand;
+        int jogos_ganhos;
+
     public:
-        void play_card(round);
-        void ask_truco(player);
-        void acept_refuse_truco(player);
-        void give_up(round);
+        virtual card play_card(round) = 0;
+        virtual int ask_truco(player) = 0;
+        virtual int acept_refuse_truco(player) = 0;
+        virtual void give_up(round) = 0;
         player();
 
 };
