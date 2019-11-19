@@ -63,7 +63,6 @@ for (; iter != Deck.end(); iter++) {
 
 void deck::shuffle(){
 	std::srand ( unsigned ( std::time(NULL) ) );
-	std::random_shuffle(Deck.begin(), Deck.end());
 	std::random_shuffle ( Deck.begin(), Deck.end(), myrandom);
 	
 }
