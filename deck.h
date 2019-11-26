@@ -66,8 +66,5 @@ void deck::shuffle(){
 	std::random_shuffle ( Deck.begin(), Deck.end(), myrandom);
 	
 }
-void cut(){
-	return;
-}
 
 #endif
