@@ -34,5 +34,7 @@ class round{
     round();
     ~round();  
 };
-
+void cut(){
+    return;
+};
 #endif
