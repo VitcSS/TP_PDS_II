@@ -31,3 +31,5 @@ class player{
         player();
 
 };
+
+#endif

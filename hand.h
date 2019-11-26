@@ -50,3 +50,5 @@ class hand: public deck(){
     return
   }
 };
+
+#endif

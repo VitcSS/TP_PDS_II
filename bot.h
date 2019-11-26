@@ -76,3 +76,4 @@ int acept_refuse_truco(player){
 
 
 
+#endif

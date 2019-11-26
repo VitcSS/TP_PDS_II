@@ -35,16 +35,12 @@ game::game() {
 }
 
 void game::play() {
-	M->display(); //perguntar a quantidade de humanos e de partidas a jogar e retorna lista de jogadores
-	int n_humanos;
-	cin >> n_humanos;
-	
-
+	M->display(jogadores); //perguntar a quantidade de humanos e de partidas a jogar e retorna lista de jogadores
 
 	int max_pts = 0;
 	while (max_pts < 12) {
-		max_pts = max(get_pontuacao_jogo(jogadores[0]), get_pontuacao_jogo(jogadores[1]));
-		R = new round(&jogadores); //mudar quando o round for implementado.
+		max_pts = max(get_pontuacao_jogo(*jogadores.begin()), get_pontuacao_jogo(*jogadores.end()));
+		R = new round(); //mudar quando o round for implementado.
 		R.play();
 		delete R;
 	}

@@ -18,7 +18,10 @@
 using namespace std;
 
 class menu{
+    private:
+        game& G;
     public:
+        menu(game&);
         
     
 };

@@ -50,3 +50,5 @@ int human::acept_refuse_truco(bool aceitar_truco){
 	}
 	return 0;
 }
+
+#endif
