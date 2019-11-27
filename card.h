@@ -91,19 +91,12 @@ void card::imprimir() {
 }
 
 
-/*int main(){
-
-int card::get_valor() {
-	return valor;
-}
-
-
-string card::get_suit() {
-	return suit;
-}
-
-string card::get_nome() {
-	return nome;
+bool card::operator==(const card& c) const {
+	if (c > *this || *this > c) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 bool card::operator>(const card& c) const {
@@ -121,21 +114,17 @@ bool card::operator>(const card& c) const {
 		return 0;
 	}
 }
+int card::get_valor() {
+	return valor;
+}
 
 
-vector<card>::iterator iter = deck.begin();
-for (; iter != deck.end(); iter++) {
-	iter->imprimir();
-	cout << endl;
-}*/
+string card::get_suit() {
+	return suit;
+}
 
-
-bool card::operator==(const card& c) const {
-	if (c > *this || *this > c) {
-		return false;
-	} else {
-		return true;
-	}
+string card::get_nome() {
+	return nome;
 }
 
 #endif
