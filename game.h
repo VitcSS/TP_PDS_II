@@ -8,6 +8,7 @@
 #include <iostream>
 #include <list>
 #include"bot.h"
+#include"round.h'
 #include"player.h"
 #include"humano.h"
 #include"hand.h"

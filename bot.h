@@ -19,6 +19,7 @@
 using namespace std;
 
 class bot : public player {
+	friend class menu;
     public:
         bot();
         card play_card(round_atual);

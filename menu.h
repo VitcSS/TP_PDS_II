@@ -21,7 +21,8 @@ class menu{
     private:
         game& G;
     public:
-        menu(game&);
+        menu(game&); //mensagem inicial e criação dos jogadores
+        display();
         
     
 };
