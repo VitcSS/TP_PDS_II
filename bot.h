@@ -17,32 +17,36 @@
 #include"game.h"
 
 using namespace std;
-
+/*
+Classe  que herda de player, representa os bots.
+*/
 class bot : public player {
     public:
-        bot();
-        card play_card(round_atual);
-        int ask_truco(player);
-        int acept_refuse_truco(player);
-        void give_up(round_atual);
+        bot(); // Construtor do bot
+        card play_card(round_atual); // Método que "joga" as cartas
+        int ask_truco(player); // Método que pede truco
+        int acept_refuse_truco(player); // Método que aceita ou não o truco
+        void give_up(round_atual); // Método para desistir da rodada
         int get_id();
 
     private:
-    	hand player_hand;
-        int id;
-        static int robot_numbers;
-        int jogos_ganhos;
+    	hand player_hand; // Atributo que possui as cartas que o bot possui na rodada
+        int id; // Referencia o bot com um ID
+        static int robot_numbers; //Numero de bots no jogo
+        int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
 }
 
-int bot::robot_numbers = 0;
+int bot::robot_numbers = 0; // Inicia o número de bots com 0
 
 card bot::play_card(round_atual){
+	// Joga as cartas de forma aleatória
 	srand(time(NULL));
 	int carta_selecionada = rand() % (player_hand.get_size_hand());
 	return player_hand.play_card(round_atual, carta_selecionada);
 }
 // Por enquanto retorna 1 caso deva pedir e 0 caso contrario
 int bot::ask_truco(player){
+	// Pede truco com uma probabilidade de 20%
 	srand(time(NULL));
 	float pedir_truco = float (rand() % 11) / 10;
 	// Pode alterar a porcentagem posteriormente
@@ -63,16 +67,24 @@ int bot::get_id(){
 }
 // Por enquanto retorna 1 caso deva aceitar e 0 caso contrario
 int acept_refuse_truco(player){
+	// Aceita truco com uma probabilidade de 80%
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
-	// Pode alterar a porcentagem posteriormente
 	if(aceitar_truco > 0.8){
 		return 1;
 	}
 	return 0;
 }
 
-
+int give_up(round_atual){
+	// Desistir da rodada com uma probabilidade de 5%
+	srand(time(NULL));
+	float desistir = float (rand() % 11) / 10;
+	if(desistir > 0.05){
+		return 1;
+	}
+	return 0;
+}
 
 
 
