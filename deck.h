@@ -21,6 +21,7 @@ public:
   deck();
   // ~deck();
   void shuffle(vector<card> );
+  int myrandom(int );
   friend class round;
 };
 
@@ -37,27 +38,23 @@ while (i < 10) {
 	i++;
 };
 
-
 shuffle(Deck);
-
-
 };
 
-
-
+int deck::myrandom (int i) { return std::rand()%i;};
 
 void deck::shuffle(vector <card> Deck){
 	std::srand ( unsigned ( std::time(NULL) ) );
 	int num = (rand()%30) + 3;
 	for(int numero = 0; numero <= num; numero++){
-		std::random_shuffle ( Deck.begin(), Deck.end())}
+		std::random_shuffle ( Deck.begin(), Deck.end());
+	};
 	vector<card>::iterator iter = Deck.begin();
-    for (; iter != Deck.end(); iter++) {
+    	for (; iter != Deck.end(); iter++) {
 	    iter->imprimir();
 	    cout << endl;    
-    };
+    	};
 };
 
+
 #endif
-
-
