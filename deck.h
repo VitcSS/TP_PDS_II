@@ -45,12 +45,13 @@ shuffle(Deck);
 };
 
 
-int deck::myrandom (int i) { return std::rand()%i;};
 
 
-void shuffle(vector <card> Deck){
+void deck::shuffle(vector <card> Deck){
 	std::srand ( unsigned ( std::time(NULL) ) );
-	std::random_shuffle ( Deck.begin(), Deck.end(), deck::myrandom);
+	int num = (rand()%30) + 3;
+	for(int numero = 0; numero <= num; numero++){
+		std::random_shuffle ( Deck.begin(), Deck.end())}
 	vector<card>::iterator iter = Deck.begin();
     for (; iter != Deck.end(); iter++) {
 	    iter->imprimir();
