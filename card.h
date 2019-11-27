@@ -7,14 +7,6 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-#include"bot.h"
-#include"player.h"
-#include"humano.h"
-#include"hand.h"
-#include"card.h"
-#include"menu.h"
-#include"deck.h"
-#include"game.h"
 
 using namespace std;
 
@@ -24,7 +16,7 @@ class card{
         int valor;
         string nome;
     public:
-        card(int v,int n);
+        card(int v,int s); // v é o valor da carta, ou seja, A, rei, 4, etc.  S é o naipe da carta, por exemplo, ouros ou espadas
 //        ~card(); dando erro, não implementado
         string get_suit();
         int get_valor();
