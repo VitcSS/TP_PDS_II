@@ -8,14 +8,15 @@
 #include <iostream>
 #include <list>
 #include<algorithm>
-#include"card.h"
-#include"round.h"
+#include "card.h"
+
 
 using namespace std;
 
 class deck{
 private:
   vector<card> Deck;
+
 public:
   deck();
   // ~deck();
@@ -49,7 +50,7 @@ int deck::myrandom (int i) { return std::rand()%i;};
 
 void shuffle(vector <card> Deck){
 	std::srand ( unsigned ( std::time(NULL) ) );
-	std::random_shuffle ( Deck.begin(), Deck.end(), myrandom);
+	std::random_shuffle ( Deck.begin(), Deck.end(), deck::myrandom);
 	vector<card>::iterator iter = Deck.begin();
     for (; iter != Deck.end(); iter++) {
 	    iter->imprimir();
