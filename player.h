@@ -16,7 +16,9 @@
 #include"game.h"
 
 using namespace std;
-
+/*
+Interface utilizada para criar o bot e o humano
+ */
 class player{
     private:
 
