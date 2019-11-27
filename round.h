@@ -1,3 +1,5 @@
+#ifndef ROUND_H_INCLUDED
+#define ROUND_H_INCLUDED
 #include <cmath>
 #include <string>
 #include <map>
@@ -25,7 +27,7 @@ class round{
     deck played;
     public:
     void get_card();
-    void remove_card(player *p){
+    void remove_card(player *p, int i){
         
     }
     void cut(); //Usa o deck 

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <list>
 #include"bot.h"
-#include"round.h'
+#include"round.h"
 #include"player.h"
 #include"humano.h"
 #include"hand.h"
@@ -32,7 +32,7 @@ class game {
 };
 
 game::game() {
-	M = new menu();
+	M = menu();
 }
 
 void game::play() {
