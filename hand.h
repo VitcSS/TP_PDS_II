@@ -7,21 +7,44 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-#include"bot.h"
-#include"player.h"
-#include"humano.h"
 #include"card.h"
-#include"menu.h"
 #include"deck.h"
-#include"game.h"
 
 using namespace std;
 
-class hand: public deck(){
+// Retirada a herança de deck para diminuir acoplamento
+
+class hand{
   private:
-  
+  static int deck_card_atual;
+  vector<card> Hand;
+
   public:
-  void play_card(round *r, int selec){
+  void play_card(round , int);
+
+  int get_size_hand();
+
+  void burn_hand(round *r);
+}
+
+
+void hand::burn_hand(round *r){
+  list<card> iterator = Deck.begin();  
+  for(int i = 1; i =< (this->Deck.size()); i++){
+    advance(iterator, 1);
+    *(r.Deck.Deck.push_back(*(iterator)));
+  }
+    this->Deck.erase(Deck.begin(), Deck.end());
+    return
+  }
+
+int hand::get_size_hand(){
+    return Hand.size();
+  }
+
+int hand::deck_card_atual = 0;
+
+void hand::play_card(round *r, int selec){
     if(selec == 0)
       return;
     if(selec > this->Deck.size() || selec < 0){
@@ -37,18 +60,5 @@ class hand: public deck(){
       return;
     }
   }
-  int get_size_hand(){
-    return Deck.size();
-  }
-  void burn_hand(round *r){
-  list<card> iterator = Deck.begin();  
-  for(int i = 1; i =< (this->Deck.size()); i++){
-    advance(iterator, 1);
-    *(r.Deck.Deck.push_back(*(iterator)));
-  }
-    this->Deck.erase(Deck.begin(), Deck.end());
-    return
-  }
-};
 
 #endif
