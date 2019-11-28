@@ -20,13 +20,22 @@ class hand{
   vector<card> Hand;
 
   public:
-  void play_card(round , int);
+  void play_card(round* , int);
 
   int get_size_hand();
 
-  void burn_hand(round *r);
+  void burn_hand(round*);
+
+  hand();
 }
 
+hand::hand(){
+	for(int i=0; i<=2; i++){
+		Hand.push_back(deck::Deck[this->deck_card_atual]);
+		deck_card_atual++;
+	}
+
+}
 
 void hand::burn_hand(round *r){
   list<card> iterator = Deck.begin();  

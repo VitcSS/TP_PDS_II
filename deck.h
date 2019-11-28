@@ -23,6 +23,7 @@ public:
   void shuffle(vector<card> );
   int myrandom(int );
   friend class round;
+  friend class hand;
 };
 
 deck::deck(){
