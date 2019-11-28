@@ -18,15 +18,15 @@
 
 # User Stories:
 
-Como um jovem, eu quero utilizar o software de truco como forma de melhorar minha técnica para jogar com meus amigos. 
+- Um jovem com âbito de jogar truco usa o jogo para melhora suas habilidades. 
 
-Como uma pessoa que está esperando a hora de sair de casa, eu quero jogar uma partida de truco pelo computador com o intuito de passar o tempo. 
+- Uma pessoa que se encontra esperando a hora de sair usa o jogo para distração.
 
-Como um jogador semi-profissional de jogos de azar, eu desejo utilizar o software de truco como ferramenta de estudo para melhorar minhas jogadas e, consequentemente, meus resultados.
+- Um jogador semi-profissional usa a aplicação para praticar suas habilidades no jogo.
 
-Como um individuo que se encontra em uma reunião de amigos, eu pretendo utilizar o software como forma de diversão para o meu grupo.
+- Um grupo de amigos usa o software para diversão em grupo.
 
-Como alguém que se encontra em uma longa viagem de avião, eu desejo utilizar este software para passar o tempo.
+- Uma pessoa em um trajeto demorado usa o truco digital para passar o tempo 
 
-Como um aluno que está entendiado com a aula eu pretendo usar o software para me distrair enquanto espero o momento da chamada.
+- Um estudante usa o jogo como distração durante uma aula entediante.
 
