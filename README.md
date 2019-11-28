@@ -18,7 +18,7 @@
 
 # User Stories:
 
-- Um jovem com âbito de jogar truco usa o jogo para melhora suas habilidades. 
+- Um jovem com hábito de jogar truco usa o jogo para melhora suas habilidades. 
 
 - Uma pessoa que se encontra esperando a hora de sair usa o jogo para distração.
 
