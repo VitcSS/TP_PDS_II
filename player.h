@@ -29,6 +29,7 @@ class player{
         player(deck);
 
 };
+int player::criacao_jogador_atual = 1;
 
 player::player(deck a){
 	if(criacao_jogador_atual == 1){
