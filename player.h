@@ -29,10 +29,9 @@ class player{
     public:
     	// Métodos virtuais
         virtual card play_card() = 0;
-        virtual int ask_truco(player&) = 0;
-        virtual int acept_refuse_truco(player&) = 0;
+        virtual int ask_truco() = 0;
+        virtual int acept_refuse_truco() = 0;
         virtual void give_up() = 0;
-        player(deck);
 
 };
 int player::criacao_jogador_atual = 1;
