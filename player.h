@@ -20,7 +20,11 @@ class player{
 
         vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
         int jogos_ganhos; // Atributo que mostra o número de jogos que o player ganhou
-		static int criacao_jogador_atual;
+     
+    protected:
+
+        static int criacao_jogador_atual;
+
 
     public:
     	// Métodos virtuais
@@ -33,41 +37,4 @@ class player{
 };
 int player::criacao_jogador_atual = 1;
 
-player::player(deck a){
-	if(criacao_jogador_atual == 1){
-		player_hand = a.Hand_player_1;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
-	}
-	if(criacao_jogador_atual == 2){
-		player_hand = a.Hand_player_2;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
-	}
-	if(criacao_jogador_atual == 3){
-		player_hand = a.Hand_player_3;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
-	}
-	if(criacao_jogador_atual == 4){
-		player_hand = a.Hand_player_4;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
-	}
-	criacao_jogador_atual++;
-	
-
-}
 #endif
