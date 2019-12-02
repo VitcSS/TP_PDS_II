@@ -63,9 +63,17 @@ Armazena um vector de cards que compôem o baralho da partida.
 Define a distribuição probabilística para o embaralhamento do vector que contém as cartas.
 Recebe: Int;
 Retorna: Int;
+###### create_hand:
 
+###### shuffle:
+Embaralha o vector de cards em função da distribuição representada por myrandom.
+
+Recebe:vector <card>
+  
+Retorna: Nada
+  
 ###### Deck:
-É o construtor do eck
+É o construtor do deck que 
 #### Player:
 
 #### Humano:
