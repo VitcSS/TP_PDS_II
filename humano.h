@@ -8,7 +8,6 @@
 #include <iostream>
 #include <list>
 #include"player.h"
-#include"hand.h"
 #include"card.h"
 #include"menu.h"
 #include"deck.h"

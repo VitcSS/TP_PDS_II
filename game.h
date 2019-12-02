@@ -11,7 +11,6 @@
 #include"round.h"
 #include"player.h"
 #include"humano.h"
-#include"hand.h"
 #include"card.h"
 #include"menu.h"
 #include"deck.h"
