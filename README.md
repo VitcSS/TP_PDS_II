@@ -18,6 +18,52 @@
 ##Sobre o programa:
 
 ### Classes criadas
+#### Card:
+Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e seu naipe.
+##### Funções:
+###### card:
+É o construtor, recebe um valor e um naipe como parãmetros e cria um card usando-os.
+Recebe: Int, String
+Retorna: Nada
+###### Get_suit:
+Retorna o naipe da carta.
+Recebe: Nada
+Retorna: String
+###### Get_valor:
+Retorna o valor da carta
+Recebe: Nada
+Retorna: Int
+###### Imprimir:
+Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
+Recebe: Nada
+Retorna: Nada
+###### operator ==:
+
+Recebe:
+Retorna:
+##### operator >:
+
+Recebe:
+Retorna:
+#### Deck:
+Armazena um vector de cards que compôem o baralho da partida.
+##### Funções:
+###### myrandom:
+Define a distribuição probabilística para o embaralhamento do vector que contém as cartas.
+Recebe: Int;
+Retorna: Int;
+
+###### Deck:
+É o construtor do eck
+#### Player:
+
+#### Humano:
+
+#### Bot:
+
+#### Round:
+
+#### Game:
 
 ### Como funciona:
 
