@@ -23,27 +23,38 @@ Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e
 ##### Funções:
 ###### card:
 É o construtor, recebe um valor e um naipe como parãmetros e cria um card usando-os.
+
 Recebe: Int, String
+
 Retorna: Nada
 ###### Get_suit:
 Retorna o naipe da carta.
+
 Recebe: Nada
+
 Retorna: String
 ###### Get_valor:
 Retorna o valor da carta
+
 Recebe: Nada
+
 Retorna: Int
 ###### Imprimir:
 Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
+
 Recebe: Nada
+
 Retorna: Nada
 ###### operator ==:
 
+
 Recebe:
+
 Retorna:
 ##### operator >:
 
 Recebe:
+
 Retorna:
 #### Deck:
 Armazena um vector de cards que compôem o baralho da partida.
