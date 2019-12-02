@@ -59,8 +59,8 @@ int bot::ask_truco(player){
 
 bot::bot(){
 	//Lógica de criar bot deve ser implementada, depende do número de player que estará no menu/jogo e da forma como a hand é gerada
-	this->id = this->robot_numbers;
-	this->robot_numbers++;
+	this->id = robot_numbers;
+	robot_numbers++;
 }
 
 int bot::get_id(){
