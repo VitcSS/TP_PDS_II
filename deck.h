@@ -77,7 +77,12 @@ void deck::create_hand(vector <card> Deck){
 		advance(it,1);
 	}
 
-    
+    vector<card>::iterator iter = Hand.begin();
+    for (; iter != Hand.end(); iter++) {
+	    iter->imprimir();
+	    cout << endl;    
+    };
 }
+
 
 #endif
