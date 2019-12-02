@@ -68,12 +68,14 @@ Retorna: Int;
 ###### shuffle:
 Embaralha o vector de cards em função da distribuição representada por myrandom.
 
-Recebe:vector <card>
+Recebe: Vector<card>
   
 Retorna: Nada
   
 ###### Deck:
-É o construtor do deck que 
+É o construtor do deck que
+
+###### 
 #### Player:
 
 #### Humano:
