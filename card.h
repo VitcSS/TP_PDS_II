@@ -17,7 +17,6 @@ class card{
         string nome;
     public:
         card(int v,int s); // v é o valor da carta, ou seja, A, rei, 4, etc.  S é o naipe da carta, por exemplo, ouros ou espadas
-//        ~card(); dando erro, não implementado
         string get_suit();
         int get_valor();
         string get_nome();

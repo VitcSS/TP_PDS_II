@@ -10,14 +10,12 @@
 #include<algorithm>
 #include "card.h"
 #include "player.h"
-#include "humano.h"
-#include "bot.h"
-
 
 
 using namespace std;
 
 class deck{
+friend class player;
 private:
   vector<card> Deck;
   vector<card> Hand_player_1;

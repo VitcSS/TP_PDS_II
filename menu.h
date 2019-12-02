@@ -8,7 +8,7 @@
 #include <iostream>
 #include <list>
 #include <utility>
-#include "player.h"
+#include "bot.h"
 
 
 using namespace std;
@@ -16,7 +16,7 @@ using namespace std;
 class menu{
     public:
         menu(); //mensagem inicial
-        void display(); //desenha a tela de jogo
+        void display(vector<player> players, int i); //desenha a tela de jogo
 		pair<int, int> get_jogadores();
     
 };

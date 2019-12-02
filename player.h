@@ -7,10 +7,7 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-<<<<<<< HEAD
 #include"hand.h"
-=======
->>>>>>> 424ff27f64c5c511cd85a1749d7d27c19c83201a
 #include"card.h"
 #include"deck.h"
 
@@ -23,16 +20,18 @@ class player{
 
         vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
         int jogos_ganhos; // Atributo que mostra o número de jogos que o player ganhou
+		static int criacao_jogador_atual;
 
     public:
     	// Métodos virtuais
-        virtual card play_card(round) = 0;
-        virtual int ask_truco(player) = 0;
-        virtual int acept_refuse_truco(player) = 0;
-        virtual void give_up(round) = 0;
+        virtual card play_card() = 0;
+        virtual int ask_truco(player&) = 0;
+        virtual int acept_refuse_truco(player&) = 0;
+        virtual void give_up() = 0;
         player(deck);
 
 };
+int player::criacao_jogador_atual = 1;
 
 player::player(deck a){
 	if(criacao_jogador_atual == 1){

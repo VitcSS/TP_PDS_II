@@ -11,8 +11,6 @@
 #include"card.h"
 #include"menu.h"
 #include"deck.h"
-#include"game.h"
-
 class human : public player{
     public:
         human(string name);
