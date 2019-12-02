@@ -19,6 +19,7 @@ class player{
 
         vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
         int jogos_ganhos; // Atributo que mostra o número de jogos que o player ganhou
+        static int criacao_jogador_atual;
 
     public:
     	// Métodos virtuais

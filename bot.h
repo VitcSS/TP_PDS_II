@@ -41,7 +41,7 @@ int bot::robot_numbers = 0; // Inicia o número de bots com 0
 card bot::play_card(round_atual){
 	// Joga as cartas de forma aleatória
 	srand(time(NULL));
-	int carta_selecionada = rand() % (player_hand.get_size_hand());
+	int carta_selecionada = rand() % (player_hand.size());
 	return player_hand.play_card(round_atual, carta_selecionada);
 }
 // Por enquanto retorna 1 caso deva pedir e 0 caso contrario
