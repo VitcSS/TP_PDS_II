@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include"player.h"
 #include"humano.h"
-#include"hand.h"
 #include"card.h"
 #include"menu.h"
 #include"deck.h"
@@ -31,7 +30,7 @@ class bot : public player {
         int get_id();
 
     private:
-    	hand player_hand; // Atributo que possui as cartas que o bot possui na rodada
+    	vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
         int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
