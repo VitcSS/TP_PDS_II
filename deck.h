@@ -10,7 +10,7 @@
 #include<algorithm>
 #include "card.h"
 #include "player.h"
-#include "human.h"
+#include "humano.h"
 #include "bot.h"
 
 

@@ -14,7 +14,6 @@
 #include"card.h"
 #include"menu.h"
 #include"deck.h"
-#include"game.h"
 
 using namespace std;
 /*

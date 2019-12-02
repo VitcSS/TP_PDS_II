@@ -7,7 +7,6 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-#include"bot.h"
 #include"player.h"
 #include"hand.h"
 #include"card.h"

@@ -7,6 +7,9 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
+#include <utility>
+#include "player.h"
+
 
 using namespace std;
 
@@ -14,6 +17,7 @@ class menu{
     public:
         menu(); //mensagem inicial
         void display(); //desenha a tela de jogo
+		pair<int, int> get_jogadores();
     
 };
 
@@ -26,7 +30,10 @@ menu::menu () {
 	cout << "\tVitor" << endl;
 	cout << "Pressione ENTER para jogar.";
 	getchar();
-	int num, conf;
+}
+
+pair<int, int> menu::get_jogadores() {
+	int num, conf = 0;
 	do {
 		cin.clear();
 		fflush(stdin);
@@ -43,31 +50,11 @@ menu::menu () {
             getchar();
 		} while (conf > 2 || conf < 1);
 	}
-	list<string> lista;
-	if (num != 2) {
-		for (int i = 0; i < num; i++) {
-			lista.push_back("Humano");
-		}
-		for (int i = num; i < 4; i++) {
-			lista.push_back("Bot");
-		}
-	} else if (conf == 1) {
-        for (int i = 0; i < 2; i++) {
-			lista.push_back("Humano");
-            lista.push_back("Bot");
-		}
-    } else {
-        for (int i = 0; i < 2; i++) {
-            lista.push_back("Humano");
-        }
-        for (int i = 0; i < 2; i++) {
-            lista.push_back("Bot");
-        }
-    }
-	for (list<string>::iterator iter = lista.begin(); iter != lista.end(); iter++) {
-		cout << *iter << endl;
-	}
-	//bot::robot_numbers = 4 - num;
+	return pair<int, int>(num, conf);
+}
+
+void menu::display(vector<player> players, int i) {
+	player atual = bot();
 }
 
 #endif
