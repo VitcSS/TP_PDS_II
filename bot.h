@@ -21,8 +21,9 @@ class bot : public player {
         card play_card(); // Método que "joga" as cartas
         int ask_truco(); // Método que pede truco
         int acept_refuse_truco(); // Método que aceita ou não o truco
-        void give_up(); // Método para desistir da rodada
+        int give_up(); // Método para desistir da rodada
         int get_id();
+		int get_size();
 
     private:
     	vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
@@ -89,14 +90,12 @@ int bot::ask_truco(){
 	}
 	return 0;
 }
->>>>>>> 986f6062439c79a4bc2f5e38b01d84dc7b92ff6b
-
 
 int bot::get_id(){
 	return this->id;
 }
 // Por enquanto retorna 1 caso deva aceitar e 0 caso contrario
-int acept_refuse_truco(){
+int bot::acept_refuse_truco(){
 	// Aceita truco com uma probabilidade de 80%
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
@@ -106,7 +105,7 @@ int acept_refuse_truco(){
 	return 0;
 }
 
-int give_up(){
+int bot::give_up(){
 	// Desistir da rodada com uma probabilidade de 5%
 	srand(time(NULL));
 	float desistir = float (rand() % 11) / 10;
@@ -116,5 +115,8 @@ int give_up(){
 	return 0;
 }
 
+int bot::get_size() {
+	return this->player_hand.size();
+}
 
 #endif

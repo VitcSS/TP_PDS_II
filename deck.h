@@ -15,7 +15,7 @@
 using namespace std;
 
 class deck{
-friend class player;
+friend class bot;
 private:
   vector<card> Deck;
   vector<card> Hand_player_1;
