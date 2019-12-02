@@ -69,6 +69,5 @@ player::player(deck a){
 	criacao_jogador_atual++;
 	
 
-
 }
 #endif

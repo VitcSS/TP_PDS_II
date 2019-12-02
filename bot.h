@@ -33,6 +33,7 @@ class bot : public player {
 
 int bot::robot_numbers = 0; // Inicia o número de bots com 0
 
+<<<<<<< HEAD
 // card bot::play_card(round_atual){
 // 	// Joga as cartas de forma aleatória
 // 	srand(time(NULL));
@@ -50,6 +51,25 @@ int bot::robot_numbers = 0; // Inicia o número de bots com 0
 // 	}
 // 	return 0;
 // }
+=======
+card bot::play_card(round_atual){
+	// Joga as cartas de forma aleatória
+	srand(time(NULL));
+	int carta_selecionada = rand() % (player_hand.size());
+	return player_hand.play_card(round_atual, carta_selecionada);
+}
+// Por enquanto retorna 1 caso deva pedir e 0 caso contrario
+int bot::ask_truco(player){
+	// Pede truco com uma probabilidade de 20%
+	srand(time(NULL));
+	float pedir_truco = float (rand() % 11) / 10;
+	// Pode alterar a porcentagem posteriormente
+	if(pedir_truco > 0.2){
+		return 1;
+	}
+	return 0;
+}
+>>>>>>> 986f6062439c79a4bc2f5e38b01d84dc7b92ff6b
 
 bot::bot(deck a){
 	//Lógica de criar bot deve ser implementada, depende do número de player que estará no menu/jogo e da forma como a hand é gerada
