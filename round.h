@@ -27,9 +27,7 @@ class round{
     deck played;
     public:
     void get_card();
-    void remove_card(player *p, int i){
-        
-    }
+    void remove_card(player *p, int i);
     void cut(); //Usa o deck 
     void rand_deck(); //Usa o deck
     void get_played();

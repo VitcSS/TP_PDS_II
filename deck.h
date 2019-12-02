@@ -9,6 +9,10 @@
 #include <list>
 #include<algorithm>
 #include "card.h"
+#include "player.h"
+#include "human.h"
+#include "bot.h"
+
 
 
 using namespace std;
@@ -16,7 +20,10 @@ using namespace std;
 class deck{
 private:
   vector<card> Deck;
-  vector<card> Hand;
+  vector<card> Hand_player_1;
+  vector<card> Hand_player_2;
+  vector<card> Hand_player_3;
+  vector<card> Hand_player_4;
 
 public:
   deck();
@@ -73,12 +80,24 @@ void deck::create_hand(vector <card> Deck){
 	vector<card>::iterator it = Deck.begin();
 
 	for(int i=0; i<=2; i++){
-		Hand.push_back(*it);
+		Hand_player_1.push_back(*it);
+		advance(it,1);
+	}
+	for(int i=0; i<=2; i++){
+		Hand_player_2.push_back(*it);
+		advance(it,1);
+	}
+	for(int i=0; i<=2; i++){
+		Hand_player_3.push_back(*it);
+		advance(it,1);
+	}
+	for(int i=0; i<=2; i++){
+		Hand_player_4.push_back(*it);
 		advance(it,1);
 	}
 
-    vector<card>::iterator iter = Hand.begin();
-    for (; iter != Hand.end(); iter++) {
+    vector<card>::iterator iter = Hand_player_2.begin();
+    for (; iter != Hand_player_2.end(); iter++) {
 	    iter->imprimir();
 	    cout << endl;    
     };
