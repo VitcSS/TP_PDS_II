@@ -9,14 +9,33 @@
   
   - Dois humanos, em times diferentes, e dois bots.
 ### Regras:
-  O jogo possui quatro jogadores, duas duplas, que tem suas vezes de jogar alternadas.o jogo utiliza-se de um baralho sem as cartas 8, 9, e 10 e o coringa. 
-  #### Definições importantes:
-  - Manilhas - São fixas. Dá mais forte para a mais fraca: 4 de Paus/7 de Copas/Ás de Espadas/7 de Ouros.
+  O truco mineiro utiliza um baralho para jogo sem as cartas oito, nove, dez e coringa, o que totaliza 40 cartas para o jogo. As quatro cartas de maior valor no truco mineiro se chamam manilhas e são, nessa ordem:
+  - Quatro de paus, conhecida como zap 
+  - Sete de copas
+  - Ás de Espadas, conhecida como espadilha.
+  - Sete de Ouros 
+  Para as outras cartas a relação de valor é a seguinte:
+  - 3 todos os naipes
+  - 2 todos os naipes
+  - ÁS todos os naipes, exceto espada que é manilha
+  - K todos os naipes
+  - J todos os naipes
+  - Q todos os naipes
+  - 7 somente paus e espada
+  - 6 todos os naipes
+  - 5 todos os naipes
+  - 4 todos os naipes, exceto paus que é o zap
+  #### Príncipios básicos:
   
-  - Rodada - Uma sequência de 4 jogadas, onde cada jogador joga uma carta.
+  ##### Partida:
+   No início da partida as cartas são embaralhadas e logo após isso cada jogador recebe  três cartas que compôem sua mão. Em seguida alguém joga uma carta. Depois que um jogador deposita uma carta na mes seu adversário deve faze-lo até que todos tenham feito, após isso a rodada é finalizada. O jogador ou dupla que jogou a carta de maior valor ganha a rodada. A dupla ou jogador que ganhar duas rodadas leva a partida e recebe dois pontos.
+  ##### Jogo
+   Após o fim de uma partida uma nova é iniciada e esse processo se repete até que alguém junto um total de 12 pontos. Quando alguém soma 12 pontos este jogador vence o jogo e todos tem os pontos zerados.
+  ##### Queda
+  A cada dois jogos ganhos por alguém, marca-se uma cada. Isso faz cm que zere-se todos os pontos do jogo.
   
-  - Mão - Composta de duas a três rodadas, e vale inicialmente 2 pontos.
-##Sobre o programa:
+ 
+## Sobre o programa:
 
 ### Classes criadas
 #### Card:
