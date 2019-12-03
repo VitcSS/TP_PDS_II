@@ -137,6 +137,8 @@ Retorna:String
 #### Bot:
 Classe derivada de player, possui funções que definem o comportamento do bot ao longo do jogo.
 ##### Funções:
+###### Bot:
+
 #### Round:
 Armazena todas as informações que definem uma rodada de um jogo de truco e os metódos para permitir que o fluxo de jogo ocorra.
 ##### Funções:
@@ -147,7 +149,7 @@ Executa o papel de front-end do código contendo todas as funcionalidades de HMC
 ##### Funções:
 
 ### Como funciona:
-Quando o programa é executado, a tela inicial é exibida contendo 
+Quando o programa é executado, a tela inicial é exibida contendo  
 
 # User Stories:
 
