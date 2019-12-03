@@ -18,6 +18,7 @@ class human : public player{
         int give_up(bool);
         int get_id();
         int get_size();
+        void atualizar_jogador(deck);
 		std::string get_name();
 		
     private:
@@ -26,22 +27,27 @@ class human : public player{
         static int robot_numbers; //Numero de bots no jogo
 };
 human::human(std::string name, deck a){
-	this->pontos = 0;
-	this->quedas = 0;
-	this->name = name;
+    this->name = name;
+    human::atualizar_jogador(a);
+}
+
+void human::atualizar_jogador(deck a){
+    this->pontos = 0;
+    this->quedas = 0;
     if(criacao_jogador_atual == 1){
-		player_hand = a.Hand_player_1;
-	}
-	if(criacao_jogador_atual == 2){
-		player_hand = a.Hand_player_2;
-	}
-	if(criacao_jogador_atual == 3){
-		player_hand = a.Hand_player_3;
-	}
-	if(criacao_jogador_atual == 4){
-		player_hand = a.Hand_player_4;
-	}
-	criacao_jogador_atual++;
+        player_hand = a.Hand_player_1;
+    }
+    if(criacao_jogador_atual == 2){
+        player_hand = a.Hand_player_2;
+    }
+    if(criacao_jogador_atual == 3){
+        player_hand = a.Hand_player_3;
+    }
+    if(criacao_jogador_atual == 4){
+        player_hand = a.Hand_player_4;
+        criacao_jogador_atual = 0;
+    }
+    criacao_jogador_atual++;
 }
 
 card human::play_card(){ //COLOCAR PARA TRATAR EXCESSÃO // TEM QUE DESTRUIR A CARTA QUE JÁ FOI TIRADA?

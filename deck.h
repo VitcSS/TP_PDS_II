@@ -32,6 +32,7 @@ public:
   void create_hand(vector<card>);
   friend class round;
   friend class hand;
+  friend class bot;
 };
 
 deck::deck(){

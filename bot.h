@@ -24,6 +24,7 @@ class bot : public player {
         int give_up(); // Método para desistir da rodada
         int get_id();
 		int get_size() override;
+		void atualizar_jogador(deck);
 		std::string get_name() override;
 
     private:
@@ -37,23 +38,28 @@ int bot::id_atual = 1;
 bot::bot(deck a){
 	this->id = bot::id_atual;
 	bot::id_atual++;
-	this->pontos = 0;
-	this->quedas = 0;
-	if(criacao_jogador_atual == 1){
-		this->player_hand = a.Hand_player_1;
-	}
-	if(criacao_jogador_atual == 2){
-		this->player_hand = a.Hand_player_2;
-	}
-	if(criacao_jogador_atual == 3){
-		this->player_hand = a.Hand_player_3;
-	}
-	if(criacao_jogador_atual == 4){
-		this->player_hand = a.Hand_player_4;
-	}
-	criacao_jogador_atual++;
+	bot::atualizar_jogador(a);
 
 
+}
+
+void bot::atualizar_jogador(deck a){
+    this->pontos = 0;
+    this->quedas = 0;
+    if(criacao_jogador_atual == 1){
+        player_hand = a.Hand_player_1;
+    }
+    if(criacao_jogador_atual == 2){
+        player_hand = a.Hand_player_2;
+    }
+    if(criacao_jogador_atual == 3){
+        player_hand = a.Hand_player_3;
+    }
+    if(criacao_jogador_atual == 4){
+        player_hand = a.Hand_player_4;
+        criacao_jogador_atual = 0;
+    }
+    criacao_jogador_atual++;
 }
 
 int bot::robot_numbers = 0; // Inicia o número de bots com 0
