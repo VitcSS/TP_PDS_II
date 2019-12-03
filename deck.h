@@ -49,10 +49,12 @@ deck::deck(){
 	shuffle(Deck);
 
 
-};
+}
 
 
-int deck::myrandom (int i) { return std::rand()%i;};
+int deck::myrandom (int i) {
+	return std::rand()%i;
+}
 
 
 void deck::shuffle(vector <card> Deck){
@@ -63,7 +65,7 @@ void deck::shuffle(vector <card> Deck){
 	}
 	create_hand(Deck);
 
-};
+}
 
 void deck::create_hand(vector <card> Deck){
 	vector<card>::iterator it = Deck.begin();
