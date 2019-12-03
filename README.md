@@ -9,7 +9,22 @@
   
   - Dois humanos, em times diferentes, e dois bots.
 ### Regras:
-  O truco mineiro utiliza um baralho para jogo sem as cartas oito, nove, dez e coringa, o que totaliza 40 cartas para o jogo.
+  O truco mineiro utiliza um baralho para jogo sem as cartas oito, nove, dez e coringa, o que totaliza 40 cartas para o jogo. As quatro cartas de maior valor no truco mineiro se chamam manilhas e são, nessa ordem:
+  - Quatro de paus, conhecida como zap 
+  - Sete de copas
+  - Ás de Espadas, conhecida como espadilha.
+  - Sete de Ouros 
+  Para as outras cartas a relação de valor é a seguinte:
+  - 3 todos os naipes
+  - 2 todos os naipes
+  - ÁS todos os naipes, exceto espada que é manilha
+  - K todos os naipes
+  - J todos os naipes
+  - Q todos os naipes
+  - 7 somente paus e espada
+  - 6 todos os naipes
+  - 5 todos os naipes
+  - 4 todos os naipes, exceto paus que é o zap
 ##Sobre o programa:
 
 ### Classes criadas
