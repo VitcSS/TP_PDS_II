@@ -33,10 +33,14 @@
    Após o fim de uma partida uma nova é iniciada e esse processo se repete até que alguém junto um total de 12 pontos. Quando alguém soma 12 pontos este jogador vence o jogo e todos tem os pontos zerados.
   ##### Queda
   A cada dois jogos ganhos por alguém, marca-se uma cada. Isso faz cm que zere-se todos os pontos do jogo.
-  
- 
+  ##### Empate
+   Quanto duas cartas são de mesmo valor ocorre empate, caso aconteça na primeira rodada cada jogador deve mostrar a primeira carta que possui, a de maior valor ganha. Caso as duas tenham o mesmo valor os jogadores devem mostrar a terceira carta que tem em mãos.Quando o empate ocorre após a primeira rodada ganha quem ganhou a primeira rodada.
+  ##### Truco, Seis, Nove e Doze
+  Ao pedir truco o jogador está pedindo para que o valor de pontos da partida suba de dois para quatro. O oponente tem as seguintes opções aceitar ou correr. Caso aceite a partida começa a valer 4 pontos, caso decida correr perde a partida automaticamente. O oponente têm a opção ainda de pedir para subir mais ainda o valor da partida pedindo seis, o que aumenta o valor da partida para oito pontos. Quando o jogador corre no seis ele perde a partida que estava valendo 4 pontos. Ele tem como opção oedir o nove que sobe o valor da partida para dez.A lógica se repete com o doze que sobe o valor do jogo para doze pontos.
 ## Sobre o programa:
-
+### Como compilar
+  É necessário baixar todos os arquivos presentes nesse repositório em uma mesma pasta e fazer o seguinte comando no cmd ou terminal utilizado (ex Powershell):
+  > g++ main.cpp
 ### Classes criadas
 #### Card:
 Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e seu naipe.
