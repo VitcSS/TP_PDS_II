@@ -7,33 +7,22 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-#include"bot.h"
 #include"player.h"
-#include"humano.h"
 #include"card.h"
-#include"menu.h"
-#include"deck.h"
-#include"game.h"
 
 using namespace std;
 
 class round{
     private:
-    bool winner;//Define se foi vitória do jogador ou do bot
-    static int wincount_human;
-    static int wincount_bot;
-    deck Deck;
-    deck played;
+        vector<card> mesa;
+        int primeiro;
+        int ganhador;
     public:
-    void get_card();
-    void remove_card(player *p, int i);
-    void cut(); //Usa o deck 
-    void rand_deck(); //Usa o deck
-    void get_played();
-    round();
-    ~round();  
+        round(int i);
+        vector<card> get_mesa();
+        int get_ganhador();
+        void add_carta();
+        void limpar();
 };
-void cut(){
-    return;
-};
+
 #endif

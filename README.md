@@ -2,20 +2,40 @@
   Jogo de truco programado em C++ para Windows para a matéria de Programação e Desenvolvimento de Software II pelos alunos Giovanni, Guilherme, henrique e Vítor do curso de Engenharia de Sistemas da UFMG. 
 ## Sobre o jogo:
   O jogo foi programado para ter o prompt de comando, ou o Windows PowerShell como sua HMI(Human Machine Interface. O jogo é construído com base nas regras do truco mineiro, sendo este sempre de 4 jogadores podendo ser:
+  
   - Um humano e três bots
   
   - Dois humanos ,no mesmo time, e dois bots.
   
   - Dois humanos, em times diferentes, e dois bots.
 ### Regras:
-  O jogo possui quatro jogadores, duas duplas, que tem suas vezes de jogar alternadas.o jogo utiliza-se de um baralho sem as cartas 8, 9, e 10 e o coringa. 
-  #### Definições importantes:
-  - Manilhas - São fixas. Dá mais forte para a mais fraca: 4 de Paus/7 de Copas/Ás de Espadas/7 de Ouros.
+  O truco mineiro utiliza um baralho para jogo sem as cartas oito, nove, dez e coringa, o que totaliza 40 cartas para o jogo. As quatro cartas de maior valor no truco mineiro se chamam manilhas e são, nessa ordem:
+  - Quatro de paus, conhecida como zap 
+  - Sete de copas
+  - Ás de Espadas, conhecida como espadilha.
+  - Sete de Ouros 
+  Para as outras cartas a relação de valor é a seguinte:
+  - 3 todos os naipes
+  - 2 todos os naipes
+  - ÁS todos os naipes, exceto espada que é manilha
+  - K todos os naipes
+  - J todos os naipes
+  - Q todos os naipes
+  - 7 somente paus e espada
+  - 6 todos os naipes
+  - 5 todos os naipes
+  - 4 todos os naipes, exceto paus que é o zap
+  #### Príncipios básicos:
   
-  - Rodada - Uma sequência de 4 jogadas, onde cada jogador joga uma carta.
+  ##### Partida:
+   No início da partida as cartas são embaralhadas e logo após isso cada jogador recebe  três cartas que compôem sua mão. Em seguida alguém joga uma carta. Depois que um jogador deposita uma carta na mes seu adversário deve faze-lo até que todos tenham feito, após isso a rodada é finalizada. O jogador ou dupla que jogou a carta de maior valor ganha a rodada. A dupla ou jogador que ganhar duas rodadas leva a partida e recebe dois pontos.
+  ##### Jogo
+   Após o fim de uma partida uma nova é iniciada e esse processo se repete até que alguém junto um total de 12 pontos. Quando alguém soma 12 pontos este jogador vence o jogo e todos tem os pontos zerados.
+  ##### Queda
+  A cada dois jogos ganhos por alguém, marca-se uma cada. Isso faz cm que zere-se todos os pontos do jogo.
   
-  - Mão - Composta de duas a três rodadas, e vale inicialmente 2 pontos.
-##Sobre o programa:
+ 
+## Sobre o programa:
 
 ### Classes criadas
 #### Card:
@@ -27,57 +47,202 @@ Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e
 Recebe: Int, String
 
 Retorna: Nada
+
 ###### Get_suit:
 Retorna o naipe da carta.
 
 Recebe: Nada
 
 Retorna: String
+
 ###### Get_valor:
 Retorna o valor da carta
 
 Recebe: Nada
 
 Retorna: Int
+
 ###### Imprimir:
 Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
 
 Recebe: Nada
 
 Retorna: Nada
+
 ###### operator ==:
 
 
 Recebe:
 
 Retorna:
+
 ##### operator >:
 
 Recebe:
 
 Retorna:
+
 #### Deck:
 Armazena um vector de cards que compôem o baralho da partida.
 ##### Funções:
 ###### myrandom:
 Define a distribuição probabilística para o embaralhamento do vector que contém as cartas.
+
 Recebe: Int;
+
 Retorna: Int;
 
+###### create_hand:
+Pega os doze primeiros cards do vector Deck e os distribui em quatro vectors para servirem de mãos para os players.
+
+Recebe: Vector<card>
+  
+Retorna: Nada
+###### shuffle:
+Embaralha o vector de cards em função da distribuição representada por myrandom. Logo após chama a função create_hand.
+
+Recebe: Vector<card>
+  
+Retorna: Nada
+  
 ###### Deck:
-É o construtor do eck
+É o construtor do deck que gera um vector de cards em ordem e logo depois utiliza a função shuflle para embaralha-las.
+
+Recebe: Nada
+
+Retorna: Nada
+
 #### Player:
+Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
+##### Funções:
+Não possui métodos implementados.
+#### Human:
+Classe derivada de player, possui funções para tomada de decisão durante o jogo
+##### Funções:
+###### Human:
+É o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id e armazena a mão do jogador no vector de cards que compôem a mão do jogador.
 
-#### Humano:
+Recebe: String, Deck
 
+Retorna: Nada
+###### play_card
+Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
+Recebe: Round, Int
+
+Retorna: Card
+###### ask_truco
+Permite que o jogador peça truco.
+
+Recebe:Player, Bool
+
+Retorna:Int
+###### acept_refuse_truco
+Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
+
+Recebe: Player, Bool
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do jogador, O nome escolhido por ele no início do jogo.
+
+Recebe:Nada
+
+Retorna:String
 #### Bot:
+Classe derivada de player, possui funções que definem o comportamento do bot, que jogará contra ou com o player humano, ao longo do jogo.
+##### Funções:
+###### Bot:
+É o contrutor da classe bot, armazena o número referente ao bot na variável id e armazena a mão no vector de cards que compôem a mão do jogador.
 
+Recebe: Deck
+
+Retorna: Nada
+###### play_card
+Seleciona randômicamente a carta a ser jogada pelo bot retirando-a da mão do mesmo e a levando ao Round.
+Recebe:Nada
+
+Retorna: Card
+###### ask_truco
+Decide randômicamente se o bot pedirá troco.
+
+Recebe:Nada
+
+Retorna:Int
+###### acept_refuse_truco
+Decide randômicamente se o bot aceita ou não o pedido de truco.
+Recebe: Nada
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do jogador, O nome escolhido por ele no início do jogo.
+
+Recebe:Nada
+
+Retorna:StringÉ o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id e armazena a mão do jogador no vector de cards que compôem a mão do jogador.
+
+Recebe: String, Deck
+
+Retorna: Nada
+###### play_card
+Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
+Recebe: Round, Int
+
+Retorna: Card
+###### ask_truco
+Permite que o jogador peça truco.
+
+Recebe:Player, Bool
+
+Retorna:Int
+###### acept_refuse_truco
+Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
+
+Recebe: Player, Bool
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do bot, O seu número de crição.
+
+Recebe:Nada
+
+Retorna: Int
+###### get_size:
+Retorna o tamanho da mão do jogador.
+
+Recebe: Retorna
+
+Retorna: Int
 #### Round:
+Armazena todas as informações que definem uma rodada de um jogo de truco e os metódos para permitir que o fluxo de jogo ocorra.
+##### Funções:
+
 
 #### Game:
+Armazena todas as informações de uma partida completa e possui métodos para aplicar as regras necessárias.
+#### Menu:
+Executa o papel de front-end do código contendo todas as funcionalidades de HMC (Human Machine Communication) do programa.
+##### Funções:
 
 ### Como funciona:
-
+Quando o programa é executado, a tela inicial é exibida contendo  
 
 # User Stories:
 

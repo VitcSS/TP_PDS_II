@@ -9,11 +9,7 @@
 #include <list>
 #include <cstdlib>
 #include"player.h"
-#include"humano.h"
-#include"card.h"
-#include"menu.h"
-#include"deck.h"
-#include"game.h"
+
 
 using namespace std;
 /*
@@ -25,51 +21,37 @@ class bot : public player {
         card play_card(); // Método que "joga" as cartas
         int ask_truco(); // Método que pede truco
         int acept_refuse_truco(); // Método que aceita ou não o truco
-        void give_up(); // Método para desistir da rodada
+        int give_up(); // Método para desistir da rodada
         int get_id();
+		int get_size() override;
+		std::string get_name() override;
 
     private:
-    	vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
+		static int id_atual;
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
-        int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
 };
 
+int bot::id_atual = 1;
+
 bot::bot(deck a){
+	this->id = bot::id_atual;
+	bot::id_atual++;
+	this->pontos = 0;
+	this->quedas = 0;
 	if(criacao_jogador_atual == 1){
-		player_hand = a.Hand_player_1;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_1;
 	}
 	if(criacao_jogador_atual == 2){
-		player_hand = a.Hand_player_2;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_2;
 	}
 	if(criacao_jogador_atual == 3){
-		player_hand = a.Hand_player_3;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_3;
 	}
 	if(criacao_jogador_atual == 4){
-		player_hand = a.Hand_player_4;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_4;
 	}
 	criacao_jogador_atual++;
-	
 
 
 }
@@ -94,12 +76,11 @@ int bot::ask_truco(){
 	return 0;
 }
 
-
 int bot::get_id(){
 	return this->id;
 }
 // Por enquanto retorna 1 caso deva aceitar e 0 caso contrario
-int acept_refuse_truco(){
+int bot::acept_refuse_truco(){
 	// Aceita truco com uma probabilidade de 80%
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
@@ -109,7 +90,7 @@ int acept_refuse_truco(){
 	return 0;
 }
 
-int give_up(){
+int bot::give_up(){
 	// Desistir da rodada com uma probabilidade de 5%
 	srand(time(NULL));
 	float desistir = float (rand() % 11) / 10;
@@ -119,5 +100,12 @@ int give_up(){
 	return 0;
 }
 
+int bot::get_size(){
+	return this->player_hand.size();
+}
+
+string bot::get_name() {
+	return "Bot " + to_string(id);
+}
 
 #endif
