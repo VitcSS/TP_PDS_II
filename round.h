@@ -9,6 +9,9 @@
 #include <list>
 #include"player.h"
 #include"card.h"
+#include"humano.h"
+#include"bot.h"
+
 
 using namespace std;
 
