@@ -1,4 +1,4 @@
-# TP_PDS_II: Truco Mineiro
+# TP PDS II: Truco Mineiro
   Jogo de truco programado em C++ para Windows para a matéria de Programação e Desenvolvimento de Software II pelos alunos Giovanni, Guilherme, Henrique e Vítor do curso de Engenharia de Sistemas da UFMG. 
 ## Sobre o jogo:
   O jogo foi programado para ter o prompt de comando, ou o Windows PowerShell como sua HMI(Human Machine Interface. O jogo é construído com base nas regras do truco mineiro, sendo este sempre de 4 jogadores podendo ser:
@@ -68,12 +68,20 @@ Recebe: Nada
 Retorna: Int
 
 ###### get_nome_completro:
-Retorna qual a carta em questão no formato:"Valor" de "naipe".
+Retorna qual a carta em questão no formato:"nome" de "naipe".
 
 Recebe: Nada
 
 Retorna: String
 
+###### get_nome:
+Retorna o conteúdo da variável nome
+
+Recebe: Nada
+
+Retorna: String 
+
+###### 
 ###### operator ==:
 
 
