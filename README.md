@@ -14,7 +14,9 @@
   - Sete de copas
   - Ás de Espadas, conhecida como espadilha.
   - Sete de Ouros 
+  
   Para as outras cartas a relação de valor é a seguinte:
+  
   - 3 todos os naipes
   - 2 todos os naipes
   - ÁS todos os naipes, exceto espada que é manilha
@@ -83,17 +85,18 @@ Retorna: String
 
 ###### 
 ###### operator ==:
+Retorna true se as cartas forem de pontuação equivalente. Utiliza o operator>.
 
+Recebe: Const Card&
 
-Recebe:
-
-Retorna:
+Retorna: bool
 
 ##### operator >:
+Retorna verdadeiro se a carta em questão for maior em pontuação que a carta passada como parâmetro, leva em consideração manilhas.
 
-Recebe:
+Recebe: Const Card&
 
-Retorna:
+Retorna: bool
 
 #### Deck:
 Armazena um vector de cards que compôem o baralho da partida.
@@ -259,9 +262,9 @@ Quando o programa é executado, a tela inicial é exibida contendo o título do 
 
 # User Stories:
 
-- Um jovem com hábito de jogar truco usa o jogo para melhora suas habilidades. 
+- Um jovem com hábito de jogar truco usa o jogo para melhorar suas habilidades. 
 
-- Uma pessoa que se encontra esperando a hora de sair usa o jogo para distração.
+- Uma pessoa que se encontra esperando a hora de sair usa o jogo para sua distração.
 
 - Um jogador semi-profissional usa a aplicação para praticar suas habilidades no jogo.
 

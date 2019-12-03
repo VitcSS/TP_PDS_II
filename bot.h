@@ -57,7 +57,7 @@ void bot::atualizar_jogador(deck a){
     }
     if(criacao_jogador_atual == 4){
         player_hand = a.Hand_player_4;
-        criacao_jogador_atual = 0;
+        criacao_jogador_atual = 1;
     }
     criacao_jogador_atual++;
 }
