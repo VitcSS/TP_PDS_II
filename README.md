@@ -9,13 +9,7 @@
   
   - Dois humanos, em times diferentes, e dois bots.
 ### Regras:
-  O jogo possui quatro jogadores, duas duplas, que tem suas vezes de jogar alternadas.o jogo utiliza-se de um baralho sem as cartas 8, 9, e 10 e o coringa. 
-  #### Definições importantes:
-  - Manilhas - São fixas. Dá mais forte para a mais fraca: 4 de Paus/7 de Copas/Ás de Espadas/7 de Ouros.
-  
-  - Rodada - Uma sequência de 4 jogadas, onde cada jogador joga uma carta.
-  
-  - Mão - Composta de duas a três rodadas, e vale inicialmente 2 pontos.
+  O truco mineiro utiliza um baralho para jogo sem as cartas oito, nove, dez e coringa, o que totaliza 40 cartas para o jogo.
 ##Sobre o programa:
 
 ### Classes criadas
