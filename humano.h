@@ -8,30 +8,77 @@
 #include <iostream>
 #include <list>
 #include"player.h"
-#include"card.h"
-#include"menu.h"
-#include"deck.h"
+
 class human : public player{
     public:
-        human(string name);
-        card play_card(round_atual, int card_played);
-        int ask_truco(player, bool pedir_truco);
-        int acept_refuse_truco(player, bool aceitar_truco);
-        void give_up(round_atual);
+        human(string name, deck);
+        card play_card();
+        int ask_truco(bool);
+        int acept_refuse_truco(bool);
+        int give_up(bool);
         int get_id();
+        int get_size();
 
     private:
         std::string name;
-        hand player_hand;
-        int jogos_ganhos;
+        vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
+        int id; // Referencia o bot com um ID
+        static int robot_numbers; //Numero de bots no jogo
+        int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
 };
-human::human(std::string name){
+human::human(std::string name, deck a){
 	this->name = name;
+    if(criacao_jogador_atual == 1){
+		player_hand = a.Hand_player_1;
+		vector<card>::iterator iter = player_hand.begin();
+	    for (; iter != player_hand.end(); iter++) {
+		    iter->imprimir();
+		    cout << endl;
+		}
+	}
+	if(criacao_jogador_atual == 2){
+		player_hand = a.Hand_player_2;
+		vector<card>::iterator iter = player_hand.begin();
+	    for (; iter != player_hand.end(); iter++) {
+		    iter->imprimir();
+		    cout << endl;
+		}
+	}
+	if(criacao_jogador_atual == 3){
+		player_hand = a.Hand_player_3;
+		vector<card>::iterator iter = player_hand.begin();
+	    for (; iter != player_hand.end(); iter++) {
+		    iter->imprimir();
+		    cout << endl;
+		}
+	}
+	if(criacao_jogador_atual == 4){
+		player_hand = a.Hand_player_4;
+		vector<card>::iterator iter = player_hand.begin();
+	    for (; iter != player_hand.end(); iter++) {
+		    iter->imprimir();
+		    cout << endl;
+		}
+	}
+	criacao_jogador_atual++;
 }
 
-card human::play_card(round_atual, int card_played){
-	return player_hand.play_card(round_atual, card_played);
+card human::play_card(){ //COLOCAR PARA TRATAR EXCESSÃO // TEM QUE DESTRUIR A CARTA QUE JÁ FOI TIRADA?
+    int x;
+    bool loop = true;
+    int carta_selecionada;
+    while(loop);{
+        cin >> x; 
+        if( x<1 || x>player_hand.size())
+            throw invalid_argument("Você não possui essa carta na mão");
+        if( x>0 && x<player_hand.size() )
+            loop = false;
+    }
+    carta_selecionada = x;
+    return player_hand.at(carta_selecionada);
+
 }
+
 
 int human::ask_truco(bool pedir_truco){
 	if(pedir_truco == true){
@@ -45,6 +92,21 @@ int human::acept_refuse_truco(bool aceitar_truco){
 		return 1;
 	}
 	return 0;
+}
+
+int human::get_id(){
+	return this->id;
+}
+
+int human::give_up(bool desistir){
+	if(desistir == true){
+		return 1;
+	}
+	return 0;
+}
+
+int human::get_size() {
+	return this->player_hand.size();
 }
 
 
