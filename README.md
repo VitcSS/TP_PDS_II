@@ -106,6 +106,7 @@ Recebe: String
 
 Retorna: Nada
 ###### play_card
+Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
 Recebe: Round, Int
 
 Retorna: Card
@@ -146,7 +147,7 @@ Executa o papel de front-end do código contendo todas as funcionalidades de HMC
 ##### Funções:
 
 ### Como funciona:
-Quando o program é executado, a tela inicial é exibida contendo 
+Quando o programa é executado, a tela inicial é exibida contendo 
 
 # User Stories:
 
