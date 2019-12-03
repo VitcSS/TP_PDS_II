@@ -14,7 +14,9 @@
   - Sete de copas
   - Ás de Espadas, conhecida como espadilha.
   - Sete de Ouros 
+  
   Para as outras cartas a relação de valor é a seguinte:
+  
   - 3 todos os naipes
   - 2 todos os naipes
   - ÁS todos os naipes, exceto espada que é manilha
@@ -83,17 +85,18 @@ Retorna: String
 
 ###### 
 ###### operator ==:
+Retorna true se as cartas forem de pontuação equivalente. Utiliza o operator>.
 
+Recebe: Const Card&
 
-Recebe:
-
-Retorna:
+Retorna: bool
 
 ##### operator >:
+Retorna verdadeiro se a carta em questão for maior em pontuação que a carta passada como parâmetro, leva em consideração manilhas.
 
-Recebe:
+Recebe: Const Card&
 
-Retorna:
+Retorna: bool
 
 #### Deck:
 Armazena um vector de cards que compôem o baralho da partida.
