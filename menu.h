@@ -110,25 +110,16 @@ void menu::display(vector<player*> players, int i) {
 		cout << " ";
 	}
 	cout << jogadores[2]->get_name();
-	cout << endl;
-
-	string pont;
-	pont = to_string(jogadores[2]->get_pontos()) + " pts";
-	for(int i = 0; i < (WIDTH - pont.size())/2; i++) {
-		cout << " ";
-	}
-	cout << pont;
 	for (int i = 0; i < 4; i++) {
 		cout << endl;
 	}
 
 	//Jogadores laterais:
-	pont = to_string(jogadores[3]->get_pontos()) + " pts";
-	cout << jogadores[3]->get_name() << " - " << pont;
-	for (int i = 0; i < WIDTH - (jogadores[3]->get_name().size() + jogadores[1]->get_name().size() + 6 + 2 * pont.size()); i++) {
+	cout << jogadores[3]->get_name();
+	for (int i = 0; i < WIDTH - (jogadores[3]->get_name().size() + jogadores[1]->get_name().size()); i++) {
 		cout << " ";
 	}
-	cout << jogadores[1]->get_name() << " - " << pont;
+	cout << jogadores[1]->get_name();
 	cout << endl;
 	for (int i = 1; i <= jogadores[1]->get_size(); i++) {
 		if (i <= jogadores[3]->get_size()) {
@@ -142,14 +133,40 @@ void menu::display(vector<player*> players, int i) {
 		cout << "Xx";
 		cout << endl;
 	}
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 4 + 3 - jogadores[1]->get_size(); i++) {
 		cout << endl;
 	}
+	
+	//Menu de cartas
 	cout << " [Cartas do Jogador]" << endl;
 	for (int i = 1; i <= jogadores[0]->get_size(); i++) {
-		cout << " |" << i << " - " << jogadores[0]->get_card(i-1).get_nome();
+		cout << " |" << i << " - " << jogadores[0]->get_card(i-1).get_nome_completo();
 		cout << endl;
 	}
+
+	//Jogador e mão
+	cout << endl;
+	for (int i = 0; i < (WIDTH - jogadores[0]->get_name().size())/2; i++) {
+		cout << " ";
+	}
+	cout << jogadores[0]->get_name() << endl;
+
+	for(int i = 0; i < (WIDTH - jogadores[0]->get_size())/2; i++) {
+		cout << " ";
+	}
+	for (int i = 0; i < jogadores[0]->get_size(); i++) {
+		cout << jogadores[0]->get_card(i).get_numero();
+	}
+	cout << endl;
+
+	for(int i = 0; i < (WIDTH - jogadores[0]->get_size())/2; i++) {
+		cout << " ";
+	}
+	for (int i = 0; i < jogadores[0]->get_size(); i++) {
+		cout << jogadores[0]->get_card(i).get_naipe();
+	}
+	cout << endl << endl;
+
 
 }
 

@@ -19,10 +19,9 @@ class human : public player{
         int get_id();
         int get_size();
 		std::string get_name();
-
+		
     private:
         std::string name;
-        vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
 };

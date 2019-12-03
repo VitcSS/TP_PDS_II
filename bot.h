@@ -27,7 +27,6 @@ class bot : public player {
 		std::string get_name() override;
 
     private:
-    	vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
 		static int id_atual;
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
@@ -53,7 +52,6 @@ bot::bot(deck a){
 		this->player_hand = a.Hand_player_4;
 	}
 	criacao_jogador_atual++;
-	
 
 
 }

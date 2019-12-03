@@ -15,10 +15,8 @@ using namespace std;
 Interface utilizada para criar o bot e o humano
  */
 class player{
-    private:
-        vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
-
     protected:
+        vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
         int pontos;
         int quedas;
         static int criacao_jogador_atual;
