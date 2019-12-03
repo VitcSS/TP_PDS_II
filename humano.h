@@ -16,7 +16,7 @@
 
 class human : public player{
     public:
-        human(string name);
+        human(string name, deck);
         card play_card(round_atual, int card_played);
         int ask_truco(player, bool pedir_truco);
         int acept_refuse_truco(player, bool aceitar_truco);
@@ -28,8 +28,45 @@ class human : public player{
         hand player_hand;
         int jogos_ganhos;
 };
-human::human(std::string name){
+human::human(std::string name, deck a){
 	this->name = name;
+    if(criacao_jogador_atual == 1){
+        player_hand = a.Hand_player_1;
+        vector<card>::iterator iter = player_hand.begin();
+        for (; iter != player_hand.end(); iter++) {
+            iter->imprimir();
+            cout << endl;
+        }
+    }
+    if(criacao_jogador_atual == 2){
+        player_hand = a.Hand_player_2;
+        vector<card>::iterator iter = player_hand.begin();
+        for (; iter != player_hand.end(); iter++) {
+            iter->imprimir();
+            cout << endl;
+        }
+    }
+    if(criacao_jogador_atual == 3){
+        player_hand = a.Hand_player_3;
+        vector<card>::iterator iter = player_hand.begin();
+        for (; iter != player_hand.end(); iter++) {
+            iter->imprimir();
+            cout << endl;
+        }
+    }
+    if(criacao_jogador_atual == 4){
+        player_hand = a.Hand_player_4;
+        vector<card>::iterator iter = player_hand.begin();
+        for (; iter != player_hand.end(); iter++) {
+            iter->imprimir();
+            cout << endl;
+        }
+    }
+    criacao_jogador_atual++;
+    
+
+
+
 }
 
 card human::play_card(round_atual, int card_played){
