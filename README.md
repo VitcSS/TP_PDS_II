@@ -2,6 +2,7 @@
   Jogo de truco programado em C++ para Windows para a matéria de Programação e Desenvolvimento de Software II pelos alunos Giovanni, Guilherme, henrique e Vítor do curso de Engenharia de Sistemas da UFMG. 
 ## Sobre o jogo:
   O jogo foi programado para ter o prompt de comando, ou o Windows PowerShell como sua HMI(Human Machine Interface. O jogo é construído com base nas regras do truco mineiro, sendo este sempre de 4 jogadores podendo ser:
+  
   - Um humano e três bots
   
   - Dois humanos ,no mesmo time, e dois bots.
@@ -27,67 +28,125 @@ Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e
 Recebe: Int, String
 
 Retorna: Nada
+
 ###### Get_suit:
 Retorna o naipe da carta.
 
 Recebe: Nada
 
 Retorna: String
+
 ###### Get_valor:
 Retorna o valor da carta
 
 Recebe: Nada
 
 Retorna: Int
+
 ###### Imprimir:
 Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
 
 Recebe: Nada
 
 Retorna: Nada
+
 ###### operator ==:
 
 
 Recebe:
 
 Retorna:
+
 ##### operator >:
 
 Recebe:
 
 Retorna:
+
 #### Deck:
 Armazena um vector de cards que compôem o baralho da partida.
 ##### Funções:
 ###### myrandom:
 Define a distribuição probabilística para o embaralhamento do vector que contém as cartas.
-Recebe: Int;
-Retorna: Int;
-###### create_hand:
 
+Recebe: Int;
+
+Retorna: Int;
+
+###### create_hand:
+Pega os doze primeiros cards do vector Deck e os distribui em quatro vectors para servirem de mãos para os players.
+
+Recebe: Vector<card>
+  
+Retorna: Nada
 ###### shuffle:
-Embaralha o vector de cards em função da distribuição representada por myrandom.
+Embaralha o vector de cards em função da distribuição representada por myrandom. Logo após chama a função create_hand.
 
 Recebe: Vector<card>
   
 Retorna: Nada
   
 ###### Deck:
-É o construtor do deck que
+É o construtor do deck que gera um vector de cards em ordem e logo depois utiliza a função shuflle para embaralha-las.
 
-###### 
+Recebe: Nada
+
+Retorna: Nada
+
 #### Player:
+Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
+##### Funções:
+Não possui métodos implementados.
+#### Human:
+Classe derivada de player, possui funções para tomada de decisão durante o jogo
+##### Funções:
+###### Human:
+É o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id.
+Recebe: String
 
-#### Humano:
+Retorna: Nada
+###### play_card
+Recebe: Round, Int
 
+Retorna: Card
+###### ask_truco
+Permite que o jogador peça truco.
+
+Recebe:Player, Bool
+
+Retorna:Int
+###### acept_refuse_truco
+Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
+
+Recebe: Player, Bool
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do jogador, O nome escolhido por ele no início do jogo.
+
+Recebe:Nada
+
+Retorna:String
 #### Bot:
-
+Classe derivada de player, possui funções que definem o comportamento do bot ao longo do jogo.
+##### Funções:
 #### Round:
-
+Armazena todas as informações que definem uma rodada de um jogo de truco e os metódos para permitir que o fluxo de jogo ocorra.
+##### Funções:
 #### Game:
+Armazena todas as informações de uma partida completa e possui métodos para aplicar as regras necessárias.
+#### Menu:
+Executa o papel de front-end do código contendo todas as funcionalidades de HMC (Human Machine Communication) do programa.
+##### Funções:
 
 ### Como funciona:
-
+Quando o program é executado, a tela inicial é exibida contendo 
 
 # User Stories:
 
