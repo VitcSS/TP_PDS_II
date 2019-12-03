@@ -27,4 +27,8 @@ class Round{
         void limpar();
 };
 
+Round::Round(int primeiro){
+    this->primeiro = primeiro;
+}
+
 #endif

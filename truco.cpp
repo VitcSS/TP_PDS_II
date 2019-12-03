@@ -8,6 +8,7 @@ int main() {
 	menu M = menu();
 	vector<player*> jogadores;
 	pair<int, int> par = M.get_jogadores();
+	int jogador_comecar_jogando = 0;
 	if (par.second == 0) {
 		for (int i = 0; i < par.first; i++) {
 			string nome;
@@ -45,9 +46,10 @@ int main() {
 	}
 
 	//while(jogadores[0]->get_pontos() < 12 && jogadores[1]->get_pontos() < 12) {
-		//Round R = Round(0);
+		//Round R = Round(jogador_comecar_jogando);
 		//D = deck();
 		//atualizar(jogadores, D);
+		//jogador_comecar_jogando++;
 
 	//}
 }
