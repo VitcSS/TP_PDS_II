@@ -25,7 +25,17 @@
   - 6 todos os naipes
   - 5 todos os naipes
   - 4 todos os naipes, exceto paus que é o zap
-##Sobre o programa:
+  #### Príncipios básicos:
+  
+  ##### Partida:
+   No início da partida as cartas são embaralhadas e logo após isso cada jogador recebe  três cartas que compôem sua mão. Em seguida alguém joga uma carta. Depois que um jogador deposita uma carta na mes seu adversário deve faze-lo até que todos tenham feito, após isso a rodada é finalizada. O jogador ou dupla que jogou a carta de maior valor ganha a rodada. A dupla ou jogador que ganhar duas rodadas leva a partida e recebe dois pontos.
+  ##### Jogo
+   Após o fim de uma partida uma nova é iniciada e esse processo se repete até que alguém junto um total de 12 pontos. Quando alguém soma 12 pontos este jogador vence o jogo e todos tem os pontos zerados.
+  ##### Queda
+  A cada dois jogos ganhos por alguém, marca-se uma cada. Isso faz cm que zere-se todos os pontos do jogo.
+  
+ 
+## Sobre o programa:
 
 ### Classes criadas
 #### Card:
