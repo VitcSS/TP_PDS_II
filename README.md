@@ -101,8 +101,9 @@ Não possui métodos implementados.
 Classe derivada de player, possui funções para tomada de decisão durante o jogo
 ##### Funções:
 ###### Human:
-É o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id.
-Recebe: String
+É o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id e armazena a mão do jogador no vector de cards que compôem a mão do jogador.
+
+Recebe: String, Deck
 
 Retorna: Nada
 ###### play_card
@@ -135,13 +136,86 @@ Recebe:Nada
 
 Retorna:String
 #### Bot:
-Classe derivada de player, possui funções que definem o comportamento do bot ao longo do jogo.
+Classe derivada de player, possui funções que definem o comportamento do bot, que jogará contra ou com o player humano, ao longo do jogo.
 ##### Funções:
 ###### Bot:
+É o contrutor da classe bot, armazena o número referente ao bot na variável id e armazena a mão no vector de cards que compôem a mão do jogador.
 
+Recebe: Deck
+
+Retorna: Nada
+###### play_card
+Seleciona randômicamente a carta a ser jogada pelo bot retirando-a da mão do mesmo e a levando ao Round.
+Recebe:Nada
+
+Retorna: Card
+###### ask_truco
+Decide randômicamente se o bot pedirá troco.
+
+Recebe:Nada
+
+Retorna:Int
+###### acept_refuse_truco
+Decide randômicamente se o bot aceita ou não o pedido de truco.
+Recebe: Nada
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do jogador, O nome escolhido por ele no início do jogo.
+
+Recebe:Nada
+
+Retorna:StringÉ o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id e armazena a mão do jogador no vector de cards que compôem a mão do jogador.
+
+Recebe: String, Deck
+
+Retorna: Nada
+###### play_card
+Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
+Recebe: Round, Int
+
+Retorna: Card
+###### ask_truco
+Permite que o jogador peça truco.
+
+Recebe:Player, Bool
+
+Retorna:Int
+###### acept_refuse_truco
+Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
+
+Recebe: Player, Bool
+
+Retorna: Int
+###### give_up:
+Permite que o jogador desista da partida, encerrando-a.
+
+Recebe: Round
+
+Retorna Nada
+######  get_id:
+Retorna a id do bot, O seu número de crição.
+
+Recebe:Nada
+
+Retorna: Int
+###### get_size:
+Retorna o tamanho da mão do jogador.
+
+Recebe: Retorna
+
+Retorna: Int
 #### Round:
 Armazena todas as informações que definem uma rodada de um jogo de truco e os metódos para permitir que o fluxo de jogo ocorra.
 ##### Funções:
+
+
 #### Game:
 Armazena todas as informações de uma partida completa e possui métodos para aplicar as regras necessárias.
 #### Menu:
