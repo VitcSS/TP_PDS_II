@@ -1,5 +1,5 @@
 # TP_PDS_II: Truco Mineiro
-  Jogo de truco programado em C++ para Windows para a matéria de Programação e Desenvolvimento de Software II pelos alunos Giovanni, Guilherme, henrique e Vítor do curso de Engenharia de Sistemas da UFMG. 
+  Jogo de truco programado em C++ para Windows para a matéria de Programação e Desenvolvimento de Software II pelos alunos Giovanni, Guilherme, Henrique e Vítor do curso de Engenharia de Sistemas da UFMG. 
 ## Sobre o jogo:
   O jogo foi programado para ter o prompt de comando, ou o Windows PowerShell como sua HMI(Human Machine Interface. O jogo é construído com base nas regras do truco mineiro, sendo este sempre de 4 jogadores podendo ser:
   
@@ -37,11 +37,12 @@
    Quanto duas cartas são de mesmo valor ocorre empate, caso aconteça na primeira rodada cada jogador deve mostrar a primeira carta que possui, a de maior valor ganha. Caso as duas tenham o mesmo valor os jogadores devem mostrar a terceira carta que tem em mãos.Quando o empate ocorre após a primeira rodada ganha quem ganhou a primeira rodada.
   ##### Truco, Seis, Nove e Doze
   Ao pedir truco o jogador está pedindo para que o valor de pontos da partida suba de dois para quatro. O oponente tem as seguintes opções aceitar ou correr. Caso aceite a partida começa a valer 4 pontos, caso decida correr perde a partida automaticamente. O oponente têm a opção ainda de pedir para subir mais ainda o valor da partida pedindo seis, o que aumenta o valor da partida para oito pontos. Quando o jogador corre no seis ele perde a partida que estava valendo 4 pontos. Ele tem como opção oedir o nove que sobe o valor da partida para dez.A lógica se repete com o doze que sobe o valor do jogo para doze pontos.
-## Sobre o programa:
-### Como compilar
+## Sobre o código:
+  De forma a garantir um código mais limpo e versátil criamos nosso jogo com Orientação a Objetos, utilizando tanto classes da Standart Library do C++ (STL), quanto classes criadas por nós. As classes criadas por nós foram implementadas em arquivos diferentes do main sendo cada classe implementada em seu própio .h. 
+### Como compilar:
   É necessário baixar todos os arquivos presentes nesse repositório em uma mesma pasta e fazer o seguinte comando no cmd ou terminal utilizado (ex Powershell):
   > g++ main.cpp
-### Classes criadas
+### Classes criadas:
 #### Card:
 Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e seu naipe.
 ##### Funções:
@@ -246,7 +247,7 @@ Executa o papel de front-end do código contendo todas as funcionalidades de HMC
 ##### Funções:
 
 ### Como funciona:
-Quando o programa é executado, a tela inicial é exibida contendo  
+Quando o programa é executado, a tela inicial é exibida contendo o título do jogo e o nome de seus desenvolvedores.
 
 # User Stories:
 
