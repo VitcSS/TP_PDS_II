@@ -67,12 +67,12 @@ Recebe: Nada
 
 Retorna: Int
 
-###### Imprimir:
-Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
+###### get_nome_completro:
+Retorna qual a carta em questão no formato:"Valor" de "naipe".
 
 Recebe: Nada
 
-Retorna: Nada
+Retorna: String
 
 ###### operator ==:
 
