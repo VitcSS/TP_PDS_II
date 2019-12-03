@@ -259,9 +259,9 @@ Quando o programa é executado, a tela inicial é exibida contendo o título do 
 
 # User Stories:
 
-- Um jovem com hábito de jogar truco usa o jogo para melhora suas habilidades. 
+- Um jovem com hábito de jogar truco usa o jogo para melhorar suas habilidades. 
 
-- Uma pessoa que se encontra esperando a hora de sair usa o jogo para distração.
+- Uma pessoa que se encontra esperando a hora de sair usa o jogo para sua distração.
 
 - Um jogador semi-profissional usa a aplicação para praticar suas habilidades no jogo.
 
