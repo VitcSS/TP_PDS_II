@@ -1,23 +1,31 @@
 #include <iostream>
+#include <string>
+#include "menu.h"
+#define WIDTH 80
+#define HEIGHT 24
+
+void desenhar_maos_opostas(int a, int b, int c) {
+	for(int i = 0; i < (WIDTH - b)/2; i++) {
+		cout << " ";
+	}
+	for (int i = 0; i < b; i++) {
+		cout << "X";
+	}
+}
 
 using namespace std;
 int main () {
-	cout << "\n _____ _____ _____ _____ _____ \n|_   _| __  |  |  |     |     |\n  | | |    -|  |  |   --|  |  |\n  |_| |__|__|_____|_____|_____|\n                               \n";
-	cout << "Criado por:" << endl;
-	cout << "\tGiovanni;" << endl;
-	cout << "\tGuilherme;" << endl;
-	cout << "\tHenrique; e" << endl;
-	cout << "\tVitor" << endl;
-	cout << "Pressione ENTER para jogar.";
+	deck D = deck();
+	vector<player*> bots;
+	for (int i = 0; i < 4; i++) {
+		bots.push_back(new bot(D));
+	}
+	bots[0]->get_card(0);
 	getchar();
-	int num;
-	do {
-		cin.clear();
-		fflush(stdin);
-		cout << "Quantos jogadores (1-4): ";
-		cin >> num;
-		num += 10;
-	} while (num > 4 || num < 1);
-	cout << num;
+	for (int i = 0; i < 4; i++) {
+		menu::display(bots , i);
+	}
+	
+
 	return 0;
 }

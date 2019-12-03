@@ -15,7 +15,8 @@
 using namespace std;
 
 class deck{
-friend class bot;
+	friend class bot;
+	friend class human;
 private:
   vector<card> Deck;
   vector<card> Hand_player_1;
@@ -35,19 +36,17 @@ public:
 
 deck::deck(){
 
-srand(time(NULL));
-int i = 0;
-while (i < 10) {
-	int j = 0;
-	while (j < 4) {
-		Deck.push_back(card(i, j));
-		j++;
+	srand(time(NULL));
+	int i = 0;
+	while (i < 10) {
+		int j = 0;
+		while (j < 4) {
+			Deck.push_back(card(i, j));
+			j++;
+		};
+		i++;
 	};
-	i++;
-};
-
-cout<<"teste";
-shuffle(Deck);
+	shuffle(Deck);
 
 
 };
@@ -60,16 +59,8 @@ void deck::shuffle(vector <card> Deck){
 	std::srand ( unsigned ( std::time(NULL) ) );
 	int num = (rand()%30) + 3;
 	for(int numero = 0; numero <= num; numero++){
-		std::random_shuffle ( Deck.begin(), Deck.end());};
-	vector<card>::iterator iter = Deck.begin();
-    for (; iter != Deck.end(); iter++) {
-	    iter->imprimir();
-	    cout << endl;    
-    };
-
-	cout << endl;    
-	cout << endl;    
-	cout << endl;    
+		std::random_shuffle ( Deck.begin(), Deck.end());
+	}
 	create_hand(Deck);
 
 };
@@ -93,12 +84,6 @@ void deck::create_hand(vector <card> Deck){
 		Hand_player_4.push_back(*it);
 		advance(it,1);
 	}
-
-    vector<card>::iterator iter = Hand_player_2.begin();
-    for (; iter != Hand_player_2.end(); iter++) {
-	    iter->imprimir();
-	    cout << endl;    
-    };
 }
 
 

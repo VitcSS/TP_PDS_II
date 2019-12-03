@@ -23,47 +23,34 @@ class bot : public player {
         int acept_refuse_truco(); // Método que aceita ou não o truco
         int give_up(); // Método para desistir da rodada
         int get_id();
-		int get_size();
+		int get_size() override;
+		std::string get_name() override;
 
     private:
     	vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
+		static int id_atual;
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
-        int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
 };
 
+int bot::id_atual = 1;
+
 bot::bot(deck a){
+	this->id = bot::id_atual;
+	bot::id_atual++;
+	this->pontos = 0;
+	this->quedas = 0;
 	if(criacao_jogador_atual == 1){
-		player_hand = a.Hand_player_1;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_1;
 	}
 	if(criacao_jogador_atual == 2){
-		player_hand = a.Hand_player_2;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_2;
 	}
 	if(criacao_jogador_atual == 3){
-		player_hand = a.Hand_player_3;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_3;
 	}
 	if(criacao_jogador_atual == 4){
-		player_hand = a.Hand_player_4;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
+		this->player_hand = a.Hand_player_4;
 	}
 	criacao_jogador_atual++;
 	
@@ -115,8 +102,12 @@ int bot::give_up(){
 	return 0;
 }
 
-int bot::get_size() {
+int bot::get_size(){
 	return this->player_hand.size();
+}
+
+string bot::get_name() {
+	return "Bot " + to_string(id);
 }
 
 #endif

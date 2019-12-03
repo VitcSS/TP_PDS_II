@@ -7,7 +7,6 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
-#include"hand.h"
 #include"card.h"
 #include"deck.h"
 
@@ -17,19 +16,37 @@ Interface utilizada para criar o bot e o humano
  */
 class player{
     private:
-
         vector<card> player_hand; // Atributo que possui as cartas que o player possui na rodada
-        int jogos_ganhos; // Atributo que mostra o número de jogos que o player ganhou
-     
-    protected:
 
+    protected:
+        int pontos;
+        int quedas;
         static int criacao_jogador_atual;
 
 
     public:
     	// Métodos virtuais
-        virtual int get_size();
-
+        virtual int get_size() {
+            return 0;
+        }
+        void add_pontos(int i) {
+            pontos += i;
+        }
+        int get_pontos() {
+            return pontos;
+        }
+        void ganha_queda() {
+            quedas += 1;
+        }
+        int get_quedas() {
+            return quedas;
+        }
+        virtual std::string get_name() {
+            return "";
+        }
+        card get_card(int i) {
+            return player_hand[i];
+        }
 };
 int player::criacao_jogador_atual = 1;
 

@@ -18,47 +18,29 @@ class human : public player{
         int give_up(bool);
         int get_id();
         int get_size();
+		std::string get_name();
 
     private:
         std::string name;
         vector<card> player_hand; // Atributo que possui as cartas que o bot possui na rodada
         int id; // Referencia o bot com um ID
         static int robot_numbers; //Numero de bots no jogo
-        int jogos_ganhos; // Atributo que mostra o número de jogos que o bot ganhou
 };
 human::human(std::string name, deck a){
+	this->pontos = 0;
+	this->quedas = 0;
 	this->name = name;
     if(criacao_jogador_atual == 1){
 		player_hand = a.Hand_player_1;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
 	}
 	if(criacao_jogador_atual == 2){
 		player_hand = a.Hand_player_2;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
 	}
 	if(criacao_jogador_atual == 3){
 		player_hand = a.Hand_player_3;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
 	}
 	if(criacao_jogador_atual == 4){
 		player_hand = a.Hand_player_4;
-		vector<card>::iterator iter = player_hand.begin();
-	    for (; iter != player_hand.end(); iter++) {
-		    iter->imprimir();
-		    cout << endl;
-		}
 	}
 	criacao_jogador_atual++;
 }
@@ -67,7 +49,7 @@ card human::play_card(){ //COLOCAR PARA TRATAR EXCESSÃO // TEM QUE DESTRUIR A C
     int x;
     bool loop = true;
     int carta_selecionada;
-    while(loop);{
+    while(loop){
         cin >> x; 
         if( x<1 || x>player_hand.size())
             throw invalid_argument("Você não possui essa carta na mão");
@@ -109,5 +91,8 @@ int human::get_size() {
 	return this->player_hand.size();
 }
 
+std::string human::get_name() {
+	return this->name;
+}
 
 #endif
