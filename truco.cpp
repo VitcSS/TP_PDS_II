@@ -46,7 +46,8 @@ int main() {
 	}
 
 	//while(jogadores[0]->get_pontos() < 12 && jogadores[1]->get_pontos() < 12) {
-		//Round R = Round(jogador_comecar_jogando);
+		//Round R = Round(jogador_comecar_jogando, &jogadores);
+		//R.jogar();
 		//D = deck();
 		//atualizar(jogadores, D);
 		//jogador_comecar_jogando++;

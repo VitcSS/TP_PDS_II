@@ -29,6 +29,7 @@ class menu{
         menu(); //mensagem inicial
         static void display(vector<player*> players, int i); //desenha a tela de jogo
 		pair<int, int> get_jogadores();
+		static void clear();
     
 };
 
@@ -166,8 +167,14 @@ void menu::display(vector<player*> players, int i) {
 		cout << jogadores[0]->get_card(i).get_naipe();
 	}
 	cout << endl << endl;
-	delete[] jogadores;
+	for (player* p : jogadores) {
+		delete p;
+	}
 
+}
+
+void menu::clear() {
+	system(CLEAR);
 }
 
 #endif
