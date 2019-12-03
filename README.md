@@ -41,7 +41,7 @@
   De forma a garantir um código mais limpo e versátil criamos nosso jogo com Orientação a Objetos, utilizando tanto classes da Standart Library do C++ (STL), quanto classes criadas por nós. As classes criadas por nós foram implementadas em arquivos diferentes do main sendo cada classe implementada em seu própio .h. 
 ### Como compilar:
   É necessário baixar todos os arquivos presentes nesse repositório em uma mesma pasta e fazer o seguinte comando no cmd ou terminal utilizado (ex Powershell):
-  > g++ main.cpp
+  > g++ truco.cpp
 ### Classes criadas:
 #### Card:
 Tad criado para armazenar os dados que compôem uma carta sendo eles seu valor e seu naipe.
@@ -67,12 +67,12 @@ Recebe: Nada
 
 Retorna: Int
 
-###### Imprimir:
-Imprime no terminal qual a carta em questão no formato:"Valor" de "naipe".
+###### get_nome_completro:
+Retorna qual a carta em questão no formato:"Valor" de "naipe".
 
 Recebe: Nada
 
-Retorna: Nada
+Retorna: String
 
 ###### operator ==:
 
