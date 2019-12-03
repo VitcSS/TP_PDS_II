@@ -166,7 +166,7 @@ void menu::display(vector<player*> players, int i) {
 		cout << jogadores[0]->get_card(i).get_naipe();
 	}
 	cout << endl << endl;
-
+	delete[] jogadores;
 
 }
 

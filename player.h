@@ -45,6 +45,9 @@ class player{
         card get_card(int i) {
             return player_hand[i];
         }
+        void atualizar_jogador(deck D) {
+            return;
+        }
 };
 int player::criacao_jogador_atual = 1;
 

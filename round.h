@@ -12,13 +12,15 @@
 
 using namespace std;
 
-class round{
+class Round{
     private:
         vector<card> mesa;
         int primeiro;
         int ganhador;
+        int truco;
+        vector<player*>* jogadores;
     public:
-        round(int i);
+        Round(int i);
         vector<card> get_mesa();
         int get_ganhador();
         void add_carta();
