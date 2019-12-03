@@ -20,15 +20,16 @@ class Round{
         int truco;
         vector<player*>* jogadores;
     public:
-        Round(int i);
+        Round(int i, vector<player*>*);
         vector<card> get_mesa();
         int get_ganhador();
         void add_carta();
         void limpar();
 };
 
-Round::Round(int primeiro){
+Round::Round(int primeiro, vector<player*>* jgs){
     this->primeiro = primeiro;
+    this->jogadores = jgs;
 }
 
 #endif
