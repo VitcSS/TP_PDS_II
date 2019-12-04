@@ -142,7 +142,9 @@ Retorna: Nada
 #### Player:
 Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
 ##### Funções:
-Não possui métodos implementados.
+###### add_pontos:
+###### get_pontos:
+###### 
 #### Human:
 Classe derivada de player, possui funções para tomada de decisão durante o jogo
 ##### Funções:
