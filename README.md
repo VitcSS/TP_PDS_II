@@ -307,14 +307,70 @@ Armazena todas as informações que definem uma rodada de um jogo de truco e os 
 ##### Funções:
 
 ###### Round:
-###### Jogar:
-###### Limpar:
-###### get_mesa:
+È o construtor de Round, gera uma nova rodada definindo a ordem de início do jogo e quem sãos os jogadores 
 
+Recebe: Int, Vector<player * > *
+
+Retorna: Nada
+###### Jogar:
+Roda a sequência de passos e executa as operações corretas para que se jogue uma rodada de truco.
+
+Recebe: Nada
+
+Retorna: Nada
+###### Limpar:
+Apaga o vector<card> mesa excluindo os cards jogados naquela rodada.
+ 
+Recebe: Nada
+
+Retorna: Nada
+###### get_mesa:
+Retorna o vector<card> mesa.
+  
+Recebe: Nada
+
+Retorna: Vector<card>
+  
+###### pedir_truco :
+Faz a sequência de avaliçôes necessárias para que se defina o número de pontos que valem a partida agora.
+
+Recebe: Int
+
+Retorna: Nada
+###### jogar_queda:
+Roda a sequência de passos e executa as operações corretas para que se jogue uma queda de truco.
+
+Recebe: Nada
+
+Retorna: Nada
 #### Menu:
 Executa o papel de front-end do código contendo todas as funcionalidades de HMC (Human Machine Communication) do programa.
 ##### Funções:
 
+###### Menu:
+É o construtor de menu.Gera a tela inicial do jogo.
+
+Recebe: Nada
+
+Retorna: Nada
+###### get_jogadores:
+Captura o número de jogadores que o jogo terá e retorna quantos são bots e quantos são humanos.
+
+Recebe: Nada
+
+Retorna: Int, Int.
+###### clear:
+Apaga tudo que está na tela usando o comando CLEAR do windows.
+
+Recebe: Nada
+
+Retorna: Nada
+###### display:
+Desenha a tela do jogo com as informações necessárias para que se entenda o que está acontecendo.
+
+Recebe: Vector<card> , int
+
+Retorna: Nada
 ### Como funciona:
 Quando o programa é executado, a tela inicial é exibida contendo o título do jogo e o nome de seus desenvolvedores.
 
