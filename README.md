@@ -144,7 +144,15 @@ Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
 ##### Funções:
 ###### add_pontos:
 ###### get_pontos:
-###### 
+###### ganha_queda:
+###### get_quedas:
+###### get__names:
+###### get_card:
+###### atualizar_jogador:
+###### play_card:
+###### is_a_bot:
+###### acept_refuse_truco:
+###### ask_truco:
 #### Human:
 Classe derivada de player, possui funções para tomada de decisão durante o jogo
 ##### Funções:
@@ -263,9 +271,11 @@ Retorna: Int
 Armazena todas as informações que definem uma rodada de um jogo de truco e os metódos para permitir que o fluxo de jogo ocorra.
 ##### Funções:
 
+###### Round:
+###### Jogar:
+###### Limpar:
+###### get_mesa:
 
-#### Game:
-Armazena todas as informações de uma partida completa e possui métodos para aplicar as regras necessárias.
 #### Menu:
 Executa o papel de front-end do código contendo todas as funcionalidades de HMC (Human Machine Communication) do programa.
 ##### Funções:
