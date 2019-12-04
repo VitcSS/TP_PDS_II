@@ -143,16 +143,71 @@ Retorna: Nada
 Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
 ##### Funções:
 ###### add_pontos:
+Soma mais um inteiro i a variavel pontos do player.
+
+Recebe: Int
+
+Retorna: Nada
 ###### get_pontos:
+Retorna  o número de pontos do player.
+
+Recebe: Nada
+
+Retorna: Int
 ###### ganha_queda:
+Soma um ao número de quedas ganhas pelo jogador.
+
+Recebe: Nada
+
+Retorna: Nada
 ###### get_quedas:
-###### get__names:
+Retorna o número de quedas ganhas pelo player.
+
+Recebe: Nada
+
+Retorna: Nada 
+###### get_name:
+Método virtual, restorna um espaço em branco
+
+Recebe: Nada
+
+Retorna: String
 ###### get_card:
+Retorna o card referente a posição i escolhida do vetor.
+
+Recebe: Int
+
+Retorna: Card
 ###### atualizar_jogador:
+Método virual. Não retorna nada.
+
+Recebe: Nada
+
+Retorna Nada
 ###### play_card:
+Retorna o card na posição zero do vetor da mão do jogador
+
+Recebe: Int
+
+Retorna: Nada
 ###### is_a_bot:
+Retorna o valor da variável is_bot.
+
+Recebe: Nada
+
+Retorna: Bool
 ###### acept_refuse_truco:
+Método virtual, retorna 0.
+
+Recebe: Nada
+
+Retorna: Int
 ###### ask_truco:
+Método virtual, retorna 0.
+
+Recebe: Nada
+
+Retorna: Int
 #### Human:
 Classe derivada de player, possui funções para tomada de decisão durante o jogo
 ##### Funções:
@@ -163,26 +218,27 @@ Recebe: String, Deck
 
 Retorna: Nada
 ###### play_card
-Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
-Recebe: Round, Int
+Joga a carta selecionada pelo jogador retirando-a da mão do mesmo.
+
+Recebe: Int
 
 Retorna: Card
 ###### ask_truco
 Permite que o jogador peça truco.
 
-Recebe:Player, Bool
+Recebe: Bool
 
 Retorna:Int
 ###### acept_refuse_truco
 Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
 
-Recebe: Player, Bool
+Recebe: Bool
 
 Retorna: Int
 ###### give_up:
 Permite que o jogador desista da partida, encerrando-a.
 
-Recebe: Round
+Recebe: Bool
 
 Retorna Nada
 ######  get_id:
@@ -191,6 +247,12 @@ Retorna a id do jogador, O nome escolhido por ele no início do jogo.
 Recebe:Nada
 
 Retorna:String
+###### atualiza_jogador:
+Atualize a mão do jogador, com suas novas cartas.
+
+Recebe: Deck
+
+Retorna: Nada
 #### Bot:
 Classe derivada de player, possui funções que definem o comportamento do bot, que jogará contra ou com o player humano, ao longo do jogo.
 ##### Funções:
