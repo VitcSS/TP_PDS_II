@@ -83,7 +83,18 @@ Recebe: Nada
 
 Retorna: String 
 
-###### 
+###### get_numero:
+Retorna o valor guardado na variável número.
+
+Recebe: Nada
+
+Retorna: Char
+######  get_naipe:
+Retorna o valor na variável naipe:
+
+Recebe: Nada
+
+Retorna: Char
 ###### operator ==:
 Retorna true se as cartas forem de pontuação equivalente. Utiliza o operator>.
 
@@ -131,7 +142,9 @@ Retorna: Nada
 #### Player:
 Aramzena os dados do jogador como sua mão e o número de rodadas ganhas
 ##### Funções:
-Não possui métodos implementados.
+###### add_pontos:
+###### get_pontos:
+###### 
 #### Human:
 Classe derivada de player, possui funções para tomada de decisão durante o jogo
 ##### Funções:
