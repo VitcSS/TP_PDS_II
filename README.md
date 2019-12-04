@@ -248,7 +248,7 @@ Recebe:Nada
 
 Retorna:String
 ###### atualiza_jogador:
-Atualize a mão do jogador, com suas novas cartas.
+Atualize a mão do jogador, com suas novas cartas e zera suas quedas.
 
 Recebe: Deck
 
@@ -279,46 +279,19 @@ Recebe: Nada
 
 Retorna: Int
 ###### give_up:
-Permite que o jogador desista da partida, encerrando-a.
+Decide randômicamente se o bot desiste do jogo.
 
 Recebe: Round
 
 Retorna Nada
-######  get_id:
-Retorna a id do jogador, O nome escolhido por ele no início do jogo.
+######  get_name:
+Retorna "Bot" + id.
 
 Recebe:Nada
 
-Retorna:StringÉ o contrutor da classe human, armazena o nome esolhido pelo jogador na variável id e armazena a mão do jogador no vector de cards que compôem a mão do jogador.
-
-Recebe: String, Deck
-
-Retorna: Nada
-###### play_card
-Joga a carta selecionada pelo jogador retirando-a da mão do mesmo e a levando ao Round.
-Recebe: Round, Int
-
-Retorna: Card
-###### ask_truco
-Permite que o jogador peça truco.
-
-Recebe:Player, Bool
-
-Retorna:Int
-###### acept_refuse_truco
-Permite que o jogador aceite ou recuse o pedido de truco que foi feito por outro player.
-
-Recebe: Player, Bool
-
-Retorna: Int
-###### give_up:
-Permite que o jogador desista da partida, encerrando-a.
-
-Recebe: Round
-
-Retorna Nada
+Retorna:String
 ######  get_id:
-Retorna a id do bot, O seu número de crição.
+Retorna a id do bot. O seu número de crição.
 
 Recebe:Nada
 
