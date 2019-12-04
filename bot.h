@@ -18,7 +18,7 @@ Classe  que herda de player, representa os bots.
 class bot : public player {
     public:
         bot(deck); // Construtor do bot
-        card play_card(); // Método que "joga" as cartas
+        card play_card(int); // Método que "joga" as cartas
         int ask_truco(); // Método que pede truco
         int acept_refuse_truco(); // Método que aceita ou não o truco
         int give_up(); // Método para desistir da rodada
@@ -37,6 +37,8 @@ int bot::id_atual = 1;
 
 bot::bot(deck a){
 	this->id = bot::id_atual;
+    this->pontos = 0;
+	is_bot = true;
 	bot::id_atual++;
 	bot::atualizar_jogador(a);
 
@@ -44,7 +46,6 @@ bot::bot(deck a){
 }
 
 void bot::atualizar_jogador(deck a){
-    this->pontos = 0;
     this->quedas = 0;
     if(criacao_jogador_atual == 1){
         player_hand = a.Hand_player_1;
@@ -64,11 +65,14 @@ void bot::atualizar_jogador(deck a){
 
 int bot::robot_numbers = 0; // Inicia o número de bots com 0
 
-card bot::play_card(){
+card bot::play_card(int i){
 	// Joga as cartas de forma aleatória
 	srand(time(NULL));
 	int carta_selecionada = rand() % (player_hand.size());
-	return player_hand.at(carta_selecionada);
+	card carta = player_hand[carta_selecionada];
+    player_hand[carta_selecionada] = player_hand[player_hand.size()-1];
+    player_hand.pop_back();
+    return carta;
 }
 // Por enquanto retorna 1 caso deva pedir e 0 caso contrario
 int bot::ask_truco(){
@@ -113,5 +117,6 @@ int bot::get_size(){
 string bot::get_name() {
 	return "Bot " + to_string(id);
 }
+
 
 #endif

@@ -20,6 +20,7 @@ class player{
         int pontos;
         int quedas;
         static int criacao_jogador_atual;
+        bool is_bot;
 
 
     public:
@@ -48,6 +49,13 @@ class player{
         void atualizar_jogador(deck D) {
             return;
         }
+        card play_card(int i) {
+            return player_hand[0];
+        }
+        bool is_a_bot() {
+            return is_bot;
+        }
+
 };
 int player::criacao_jogador_atual = 1;
 

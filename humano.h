@@ -12,7 +12,7 @@
 class human : public player{
     public:
         human(string name, deck);
-        card play_card();
+        card play_card(int i);
         int ask_truco(bool);
         int acept_refuse_truco(bool);
         int give_up(bool);
@@ -20,7 +20,7 @@ class human : public player{
         int get_size();
         void atualizar_jogador(deck);
 		std::string get_name();
-		
+		bool is_a_bot();
     private:
         std::string name;
         int id; // Referencia o bot com um ID
@@ -28,11 +28,13 @@ class human : public player{
 };
 human::human(std::string name, deck a){
     this->name = name;
+    this->pontos = 0;
+    this->quedas = 0;
+    is_bot = false;
     human::atualizar_jogador(a);
 }
 
 void human::atualizar_jogador(deck a){
-    this->pontos = 0;
     this->quedas = 0;
     if(criacao_jogador_atual == 1){
         player_hand = a.Hand_player_1;
@@ -50,20 +52,16 @@ void human::atualizar_jogador(deck a){
     criacao_jogador_atual++;
 }
 
-card human::play_card(){ //COLOCAR PARA TRATAR EXCESSÃO // TEM QUE DESTRUIR A CARTA QUE JÁ FOI TIRADA?
-    int x;
-    bool loop = true;
-    int carta_selecionada;
-    while(loop){
-        cin >> x; 
-        if( x<1 || x>player_hand.size())
-            throw invalid_argument("Você não possui essa carta na mão");
-        if( x>0 && x<player_hand.size() )
-            loop = false;
+card human::play_card(int i){
+    if (i < 0 || i >= player_hand.size()) {
+        throw invalid_argument("Você não possui essa carta na mão.");
     }
-    carta_selecionada = x;
-    return player_hand.at(carta_selecionada);
+    card carta = player_hand[i];
+    player_hand[i] = player_hand[player_hand.size()-1];
+    player_hand.pop_back();
+    
 
+    return carta;
 }
 
 
@@ -99,5 +97,4 @@ int human::get_size() {
 std::string human::get_name() {
 	return this->name;
 }
-
 #endif

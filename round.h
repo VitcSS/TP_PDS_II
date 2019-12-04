@@ -45,9 +45,60 @@ vector<card> Round::get_mesa() {
     return mesa;
 }
 
+void Round::jogar_queda() {
+    for (int i = 0; i < 4; i++) {
+        int indice = i+primeiro;
+        if (indice > 3) {
+            indice = indice-4;
+        }
+        player* atual = (*jogadores)[indice];
+        menu::clear();
+        cout << atual->get_name() << ", pressione ENTER para começar sua vez.";
+        getchar();
+        bool loop = true;
+        while (loop && atual->is_a_bot() == false) {
+        menu::display(*jogadores, indice);
+            int carta;
+            cout << "Qual carta você gostaria de jogar? Use 0 para pedir truco: ";
+            cin.clear();
+            fflush(stdin);
+            cin >> carta;
+            if (carta == 0) {
+                this->pedir_truco(indice + 1);
+            } else {
+                try {
+                    mesa.push_back(atual->play_card(carta));
+                    loop = false;
+                } catch (invalid_argument er) {
+                    cout << er.what() << endl;
+                }
+            }
+        }
+        if (atual->is_a_bot()) {
+            mesa.push_back(atual->play_card(0));
+        }
+        if (i == 0) {
+            ganhador = i;
+        } else if (mesa[i] > mesa[ganhador]) {
+            ganhador = i;
+        }
+
+    }
+    
+}
+
 void Round::jogar() {
+    int count = 0;
     while ((*jogadores)[0]->get_quedas() < 2 && (*jogadores)[1]->get_quedas() < 2) {
         this->jogar_queda();
+        count++;
+        if (count == 1 && (*jogadores)[0]->get_quedas() == 1 && (*jogadores)[1]->get_quedas() == 1) {
+            count--;
+        } else if (count == 1 && (*jogadores)[0]->get_quedas() == 1) {
+            ganhou_primeira = 0;
+        } else if (count == 1 && (*jogadores)[1]->get_quedas() == 1) {
+            ganhou_primeira = 1;
+        }
     }
     if ((*jogadores)[1]->get_quedas() != 2) {
         (*jogadores)[0]->add_pontos(truco);
@@ -73,10 +124,6 @@ void Round::jogar() {
         }
     }
     getchar();
-}
-
-void Round::jogar_queda() {
-    return;
 }
 
 #endif
