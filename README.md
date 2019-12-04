@@ -83,7 +83,18 @@ Recebe: Nada
 
 Retorna: String 
 
-###### 
+###### get_numero:
+Retorna o valor guardado na variável número.
+
+Recebe: Nada
+
+Retorna: Char
+######  get_naipe:
+Retorna o valor na variável naipe:
+
+Recebe: Nada
+
+Retorna: Char
 ###### operator ==:
 Retorna true se as cartas forem de pontuação equivalente. Utiliza o operator>.
 
