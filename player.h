@@ -55,6 +55,12 @@ class player{
         bool is_a_bot() {
             return is_bot;
         }
+        virtual int accept_refuse_truco() {
+            return 0;
+        }
+        virtual int ask_truco() {
+            return 0;
+        }
 
 };
 int player::criacao_jogador_atual = 1;

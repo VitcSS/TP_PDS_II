@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <iostream>
 #include <list>
+#include <cctype>
 #include"player.h"
 #include"card.h"
 #include"humano.h"
@@ -25,6 +26,8 @@ class Round{
         int truco;
         vector<player*>* jogadores;
         void jogar_queda();
+        void pedir_truco(int);
+        int ultimo_truco;
     public:
         Round(int i, vector<player*>*);
         void jogar();
@@ -57,14 +60,14 @@ void Round::jogar_queda() {
         getchar();
         bool loop = true;
         while (loop && atual->is_a_bot() == false) {
-        menu::display(*jogadores, indice);
+            menu::display(*jogadores, indice);
             int carta;
             cout << "Qual carta você gostaria de jogar? Use 0 para pedir truco: ";
             cin.clear();
             fflush(stdin);
             cin >> carta;
             if (carta == 0) {
-                this->pedir_truco(indice + 1);
+                this->pedir_truco(indice);
             } else {
                 try {
                     mesa.push_back(atual->play_card(carta));
@@ -75,16 +78,66 @@ void Round::jogar_queda() {
             }
         }
         if (atual->is_a_bot()) {
+            if(atual->ask_truco()){
+                this->pedir_truco(indice);
+            }
             mesa.push_back(atual->play_card(0));
         }
-        if (i == 0) {
-            ganhador = i;
-        } else if (mesa[i] > mesa[ganhador]) {
-            ganhador = i;
-        }
-
     }
-    
+    bool empate = true;
+    for (int i = 0; i<4; i++) {
+        bool ganhando = true;
+        int indice = i+primeiro;
+        if (indice > 3) {
+            indice = indice-4;
+        }
+        for (int j = 0; j < 4; j++) {
+            if (j == i) {
+                continue;
+            }
+            if (mesa[j] > mesa[i] || mesa[j] == mesa[i]) {
+                ganhando = false;
+                break;
+            }
+        }
+        if (ganhando) {
+            empate = false;
+            (*jogadores)[indice%2 + 2]->ganha_queda();
+            (*jogadores)[indice%2]->ganha_queda();
+            break;
+        }
+    }
+
+}
+
+void Round::pedir_truco(int i) {
+    if (ultimo_truco == i%2 || truco == 12) {
+        return;
+    }
+    char ans;
+    if ((*jogadores)[i]->is_a_bot()) {
+        if ((*jogadores)[i]->accept_refuse_truco()) {
+            ans = 's';
+        }
+    } else {
+        cout << (*jogadores)[i]->get_name() << " pediu truco. " << (*jogadores)[(i+1)%4]->get_name() << " aceita (s/n)?";
+        fflush(stdin);
+        cin.clear();
+        cin >> ans;
+        ans = tolower(ans);
+    }
+    if (ans == 's') {
+        switch (truco) {
+            case 1:
+                truco = 4;
+                break;
+            case 4:
+                truco = 8;
+            case 8:
+                truco = 12;
+        }
+        ultimo_truco = i % 2;
+    }
 }
 
 void Round::jogar() {

@@ -19,8 +19,8 @@ class bot : public player {
     public:
         bot(deck); // Construtor do bot
         card play_card(int); // Método que "joga" as cartas
-        int ask_truco(); // Método que pede truco
-        int acept_refuse_truco(); // Método que aceita ou não o truco
+        int ask_truco() override; // Método que pede truco
+        int accept_refuse_truco() override; // Método que aceita ou não o truco
         int give_up(); // Método para desistir da rodada
         int get_id();
 		int get_size() override;
@@ -90,7 +90,7 @@ int bot::get_id(){
 	return this->id;
 }
 // Por enquanto retorna 1 caso deva aceitar e 0 caso contrario
-int bot::acept_refuse_truco(){
+int bot::accept_refuse_truco(){
 	// Aceita truco com uma probabilidade de 80%
 	srand(time(NULL));
 	float aceitar_truco = float (rand() % 11) / 10;
