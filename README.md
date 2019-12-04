@@ -380,8 +380,6 @@ Atuliaza a mão de todos os jogadores com novas cartas quando chamada.
 Recebe: Deck
 
 Retorna: Nada
-### Como funciona:
-Quando o programa é executado, a tela inicial é exibida contendo o título do jogo e o nome de seus desenvolvedores.
 
 # User Stories:
 
